@@ -27,6 +27,14 @@ body {
   }
 }
 
+input {
+  border: 2px solid #868686;
+}
+
+input.isError {
+  border: 2px solid #ff0000;
+}
+
 @media screen and (max-width: 768px) {
   #root {
     background-position-y: -70px;

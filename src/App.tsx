@@ -6,17 +6,24 @@ const App = () => {
   const [step, setStep] = useState(1);
   const [contact, setContact] = useState("");
   const [selectedTrainer, setSelectedTrainer] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (/^[0-9+]*$/.test(value)) {
       setContact(value);
     }
+    if (isError && contact.length >= 6) {
+      setIsError(false); // Сброс ошибки
+    }
   };
 
   const handleContactSubmit = () => {
     if (contact.length >= 6) {
+      setIsError(false); // Сброс ошибки
       setStep(3);
+    } else {
+      setIsError(true); // Устанавливаем ошибку
     }
   };
 
@@ -91,7 +98,11 @@ const App = () => {
                 value={contact}
                 onChange={handleContactChange}
                 maxLength={14}
-                className="w-full p-4 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500 transition duration-300"
+                className={`w-full p-4 text-lg border-2 rounded-lg focus:outline-none transition duration-300  ${
+                  isError
+                    ? "border-red-500 focus:ring-red-500 isError"
+                    : "border-gray-300 focus:ring-blue-500"
+                }`}
               />
               <button
                 onClick={handleContactSubmit}
@@ -125,33 +136,40 @@ const App = () => {
 
           {/* Шаг 4 - Анкеты тренеров */}
           {step === 4 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <>
               <h2 className="text-2xl font-semibold text-[#c3c3c3] text-center mb-6">
                 Выберите тренера
               </h2>
-              {trainersData.map((trainer) => (
-                <div
-                  key={trainer.name}
-                  className="bg-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300"
-                >
-                  <div className="p-6 text-center">
-                    <h3 className="text-lg font-semibold text-gray-700">
-                      {trainer.name}
-                    </h3>
-                    <button
-                      onClick={() => handleTrainerSelect(trainer.name)}
-                      style={{
-                        background:
-                          "linear-gradient(to right, #4f46e5, #9333ea)",
-                      }}
-                      className="text-white py-2 px-4 rounded-full mt-4 transform transition-all duration-300 cursor-pointer active:opacity-50"
-                    >
-                      Выбрать
-                    </button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {trainersData.map((trainer) => (
+                  <div
+                    key={trainer.name}
+                    className="bg-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300"
+                  >
+                    <div className="p-6 text-center">
+                      <h3 className="text-lg font-semibold text-gray-700">
+                        {trainer.name}
+                      </h3>
+                      <img
+                        src={trainer.image}
+                        className="w-[82px] h-[82px] mx-auto rounded-full"
+                        alt={trainer.name}
+                      />
+                      <button
+                        onClick={() => handleTrainerSelect(trainer.name)}
+                        style={{
+                          background:
+                            "linear-gradient(to right, #4f46e5, #9333ea)",
+                        }}
+                        className="text-white py-2 px-4 rounded-full mt-4 transform transition-all duration-300 cursor-pointer active:opacity-50"
+                      >
+                        Выбрать
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </>
           )}
 
           {/* Шаг 5 - Выбор тарифа */}
@@ -198,7 +216,8 @@ const App = () => {
               <h2 className="text-2xl font-semibold text-[#c3c3c3]">
                 Переходите к оплате через Юмани
               </h2>
-              <button
+              <a
+                href="https://yoomani.ru/"
                 type="submit"
                 style={{
                   background: "linear-gradient(to right, #34d399, #10b981)",
@@ -206,7 +225,7 @@ const App = () => {
                 className="text-white py-3 px-6 rounded-full shadow-lg w-full transform transition-all duration-300 cursor-pointer"
               >
                 Перейти к оплате
-              </button>
+              </a>
             </div>
           )}
         </form>
