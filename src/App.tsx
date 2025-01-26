@@ -91,7 +91,7 @@ const App = () => {
                 value={contact}
                 onChange={handleContactChange}
                 maxLength={14}
-                className="w-full p-4 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500 transition duration-300"
+                className="w-full p-4 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500 transition duration-300"
               />
               <button
                 onClick={handleContactSubmit}
