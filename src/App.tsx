@@ -147,7 +147,7 @@ const App = () => {
                     className="bg-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300"
                   >
                     <div className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-gray-700">
+                      <h3 className="text-lg font-semibold text-[#363636]">
                         {trainer.name}
                       </h3>
                       <img
