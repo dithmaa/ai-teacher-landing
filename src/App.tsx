@@ -1,14 +1,31 @@
-// App.tsx
-
 import { useState } from "react";
+import blurImage from "./assets/blur-img.jpg";
+import { trainersData } from "./shared/constants/dummy-data";
 
 const App = () => {
   const [step, setStep] = useState(1);
   const [contact, setContact] = useState("");
   const [selectedTrainer, setSelectedTrainer] = useState("");
+  const [isError, setIsError] = useState(false);
+
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Проверяем, содержит ли значение только цифры и разрешаем "+"
+    if (/^[0-9+]*$/.test(value)) {
+      setContact(value);
+    }
+    if (isError && value.length >= 6) {
+      setIsError(false); // Сброс ошибки
+    }
+  };
 
   const handleContactSubmit = () => {
-    setStep(4); // Переход к следующему шагу
+    if (contact.length >= 6) {
+      setStep(3);
+      setIsError(false); // Сброс ошибки
+    } else {
+      setIsError(true); // Устанавливаем ошибку
+    }
   };
 
   const handleTrainerSelect = (trainer: string) => {
@@ -21,100 +38,170 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      {/* Рекламный баннер */}
-      <div className="banner">
-        <h2>
-          Болит спина? Ответьте на 5 вопросов и получите идеальную программу
-          тренировок.
-        </h2>
-      </div>
+    <div className="App max-w-[1280px] mx-auto px-6 py-8 flex justify-center items-center min-h-screen">
+      <main className="space-y-8 w-full max-w-lg">
+        <form action="#">
+          {/* Рекламный баннер */}
 
-      {/* Шаг 1 - Прохождение квиза */}
-      {step === 1 && (
-        <div>
-          <h2>Ответьте на 5 вопросов и получите программу</h2>
-          {/* Здесь можно вставить форму квиза, например, с вопросами */}
-          <button onClick={() => setStep(2)}>Перейти к анкете</button>
-        </div>
-      )}
+          {step === 1 && (
+            <div className="bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-700 text-white py-6 px-8 rounded-xl shadow-lg text-center my-[20px]">
+              <h2 className="text-lg lg:text-2xl font-extrabold">
+                Болит спина? Ответьте на 5 вопросов и получите идеальную
+                программу тренировок.
+              </h2>
+            </div>
+          )}
 
-      {/* Шаг 2 - Получение программы */}
-      {step === 2 && (
-        <div>
-          <h3>Ваша программа с записанными видео уже готова!</h3>
-          <img
-            src="path_to_image"
-            alt="Мини-апп"
-            style={{ filter: "blur(10px)" }}
-          />
-          <p>
-            Перейдите по данной ссылке или просто оставьте ваш номер, чтобы мы
-            могли вам прислать программу.
-          </p>
-          <input
-            type="tel"
-            placeholder="Введите номер"
-            value={contact}
-            onChange={(e) => setContact(e.target.value)}
-          />
-          <button onClick={handleContactSubmit}>Отправить</button>
-        </div>
-      )}
+          {/* Шаг 1 - Прохождение квиза */}
+          {step === 1 && (
+            <div className="text-center space-y-6">
+              <h2 className="text-lg lg:text-2xl lg:font-semibold text-[#c3c3c3]">
+                Ответьте на 5 вопросов и получите программу
+              </h2>
+              <div className="mt-4">
+                <button
+                  onClick={() => setStep(2)}
+                  className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-full shadow-md hover:from-blue-600 hover:to-indigo-600 transform transition-all duration-300 cursor-pointer active:opacity-50"
+                >
+                  Перейти к анкете
+                </button>
+              </div>
+            </div>
+          )}
 
-      {/* Шаг 3 - Ускорение с тренером */}
-      {step === 3 && (
-        <div>
-          <h2>
-            Тренировки с тренером ускоряют избавление от симптомов на 35%.
-          </h2>
-          <button onClick={() => setStep(4)}>
-            Подобрать тренера на основе анкеты
-          </button>
-        </div>
-      )}
-
-      {/* Шаг 4 - Анкеты тренеров */}
-      {step === 4 && (
-        <div>
-          <h2>Выберите тренера</h2>
-          {/* Пример анкеты тренеров */}
-          {["Тренер 1", "Тренер 2", "Тренер 3"].map((trainer) => (
-            <div key={trainer}>
-              <h3>{trainer}</h3>
-              <button onClick={() => handleTrainerSelect(trainer)}>
-                Выбрать
+          {/* Шаг 2 - Получение программы */}
+          {step === 2 && (
+            <div className="text-center space-y-6">
+              <h3 className="text-xl lg:text-3xl font-semibold text-[#c3c3c3]">
+                Ваша программа с записанными видео уже готова!
+              </h3>
+              <div className="bg-gray-200 h-40 w-full rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src={blurImage}
+                  alt="Мини-апп"
+                  className="w-full h-full object-cover blur-[2px]"
+                />
+              </div>
+              <p className="text-sm lg:text-lg text-[#fff]">
+                Перейдите по данной ссылке или просто оставьте ваш номер, чтобы
+                мы могли вам прислать программу.
+              </p>
+              <input
+                type="tel"
+                placeholder="Введите номер"
+                value={contact}
+                onChange={handleContactChange}
+                maxLength={14}
+                className={`w-full p-4 text-lg border-2 rounded-lg focus:outline-none transition duration-300 ${
+                  isError
+                    ? "border-red-500 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-blue-500"
+                }`}
+              />
+              <button
+                onClick={handleContactSubmit}
+                className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-full shadow-lg w-full hover:from-blue-600 hover:to-indigo-600 transform transition-all duration-300 cursor-pointer active:opacity-50"
+              >
+                Отправить
               </button>
             </div>
-          ))}
-        </div>
-      )}
+          )}
 
-      {/* Шаг 5 - Выбор тарифа */}
-      {step === 5 && selectedTrainer && (
-        <div>
-          <h2>Выберите тариф для тренировки с {selectedTrainer}</h2>
-          <div>
-            <button onClick={handlePayment}>
-              Тариф за 2 недели — 3990 руб
-            </button>
-            <button onClick={handlePayment}>Тариф за 1 месяц — 5990 руб</button>
-            <button onClick={handlePayment}>
-              Тариф за 3 месяца — 13990 руб
-            </button>
-          </div>
-        </div>
-      )}
+          {/* Шаг 3 - Ускорение с тренером */}
+          {step === 3 && (
+            <div className="text-center space-y-6">
+              <h2 className="text-xl font-semibold text-[#c3c3c3]">
+                Тренировки с тренером ускоряют избавление от симптомов на 35%.
+              </h2>
+              <button
+                onClick={() => setStep(4)}
+                className="bg-gradient-to-r from-green-400 to-green-500 text-white py-3 px-6 rounded-full shadow-md hover:from-green-500 hover:to-green-600 transform transition-all duration-300 cursor-pointer active:opacity-50"
+              >
+                Подобрать тренера на основе анкеты
+              </button>
+            </div>
+          )}
 
-      {/* Шаг 6 - Экран оплаты */}
-      {step === 6 && (
-        <div>
-          <h2>Переходите к оплате через Юмани</h2>
-          <button onClick={() => alert("Оплата произведена")}>
-            Перейти к оплате
-          </button>
-        </div>
-      )}
+          {/* Шаг 4 - Анкеты тренеров */}
+          {step === 4 && (
+            <>
+              <h2 className="text-2xl font-semibold text-[#c3c3c3] text-center mb-6">
+                Выберите тренера
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {trainersData.map((trainer) => (
+                  <div
+                    key={trainer.id}
+                    className="bg-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300"
+                  >
+                    <div className="p-6 text-center">
+                      <h3 className="text-lg font-semibold text-gray-700">
+                        {trainer.name}
+                      </h3>
+                      <img
+                        className="w-[92px] h-[92px] rounded-full mx-auto"
+                        src={trainer.image}
+                        alt={trainer.name}
+                      />
+                      <button
+                        onClick={() => handleTrainerSelect(trainer.name)}
+                        className="bg-blue-500 text-white py-2 px-4 rounded-full mt-4 hover:bg-blue-600 transform transition-all duration-300 cursor-pointer active:opacity-50"
+                      >
+                        Выбрать
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* Шаг 5 - Выбор тарифа */}
+          {step === 5 && selectedTrainer && (
+            <div className="text-center space-y-6">
+              <h2 className="text-2xl font-semibold text-[#c3c3c3]">
+                Выберите тариф для тренировки с {selectedTrainer}
+              </h2>
+              <div className="space-y-4">
+                <button
+                  onClick={handlePayment}
+                  className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-full shadow-md hover:from-blue-600 hover:to-indigo-600 transform transition-all duration-300 w-full cursor-pointer active:opacity-50"
+                >
+                  Тариф за 2 недели — 3990 руб
+                </button>
+                <button
+                  onClick={handlePayment}
+                  className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-full shadow-md hover:from-blue-600 hover:to-indigo-600 transform transition-all duration-300 w-full cursor-pointer active:opacity-50"
+                >
+                  Тариф за 1 месяц — 5990 руб
+                </button>
+                <button
+                  onClick={handlePayment}
+                  className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-full shadow-md hover:from-blue-600 hover:to-indigo-600 transform transition-all duration-300 w-full cursor-pointer active:opacity-50"
+                >
+                  Тариф за 3 месяца — 13990 руб
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Шаг 6 - Экран оплаты */}
+          {step === 6 && (
+            <div className="text-center space-y-6">
+              <h2 className="text-2xl font-semibold text-[#c3c3c3]">
+                Переходите к оплате через Юмани
+              </h2>
+              <a
+                href="https://t.me/FitGuid_bot"
+                type="submit"
+                className="bg-gradient-to-r from-green-400 to-green-500 text-white py-3 px-6 rounded-full shadow-lg hover:from-green-500 hover:to-green-600 transform transition-all duration-300 w-full cursor-pointer"
+              >
+                Перейти к оплате
+              </a>
+            </div>
+          )}
+        </form>
+      </main>
     </div>
   );
 };
