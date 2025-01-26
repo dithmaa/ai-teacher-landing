@@ -6,35 +6,27 @@ const App = () => {
   const [step, setStep] = useState(1);
   const [contact, setContact] = useState("");
   const [selectedTrainer, setSelectedTrainer] = useState("");
-  const [isError, setIsError] = useState(false);
 
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    // Проверяем, содержит ли значение только цифры и разрешаем "+"
     if (/^[0-9+]*$/.test(value)) {
       setContact(value);
-    }
-    if (isError && value.length >= 6) {
-      setIsError(false); // Сброс ошибки
     }
   };
 
   const handleContactSubmit = () => {
     if (contact.length >= 6) {
       setStep(3);
-      setIsError(false); // Сброс ошибки
-    } else {
-      setIsError(true); // Устанавливаем ошибку
     }
   };
 
   const handleTrainerSelect = (trainer: string) => {
     setSelectedTrainer(trainer);
-    setStep(5); // Переход к выбору тарифа
+    setStep(5);
   };
 
   const handlePayment = () => {
-    setStep(6); // Переход к экрану оплаты
+    setStep(6);
   };
 
   return (
@@ -42,9 +34,13 @@ const App = () => {
       <main className="space-y-8 w-full max-w-lg">
         <form action="#">
           {/* Рекламный баннер */}
-
           {step === 1 && (
-            <div className="bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-700 text-white py-6 px-8 rounded-xl shadow-lg text-center my-[20px]">
+            <div
+              style={{
+                background: "linear-gradient(to right, #4f46e5, #9333ea)",
+              }}
+              className="text-white py-6 px-8 rounded-xl shadow-lg text-center my-[20px]"
+            >
               <h2 className="text-lg lg:text-2xl font-extrabold">
                 Болит спина? Ответьте на 5 вопросов и получите идеальную
                 программу тренировок.
@@ -61,7 +57,10 @@ const App = () => {
               <div className="mt-4">
                 <button
                   onClick={() => setStep(2)}
-                  className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-full shadow-md hover:from-blue-600 hover:to-indigo-600 transform transition-all duration-300 cursor-pointer active:opacity-50"
+                  className="text-white py-3 px-6 rounded-full shadow-md transform transition-all duration-300 cursor-pointer active:opacity-50"
+                  style={{
+                    background: "linear-gradient(to right, #4f46e5, #9333ea)",
+                  }}
                 >
                   Перейти к анкете
                 </button>
@@ -92,15 +91,14 @@ const App = () => {
                 value={contact}
                 onChange={handleContactChange}
                 maxLength={14}
-                className={`w-full p-4 text-lg border-2 rounded-lg focus:outline-none transition duration-300 ${
-                  isError
-                    ? "border-red-500 focus:ring-red-500"
-                    : "border-gray-300 focus:ring-blue-500"
-                }`}
+                className="w-full p-4 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500 transition duration-300"
               />
               <button
                 onClick={handleContactSubmit}
-                className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-full shadow-lg w-full hover:from-blue-600 hover:to-indigo-600 transform transition-all duration-300 cursor-pointer active:opacity-50"
+                style={{
+                  background: "linear-gradient(to right, #4f46e5, #9333ea)",
+                }}
+                className="text-white py-3 px-6 rounded-full shadow-lg w-full transform transition-all duration-300 cursor-pointer active:opacity-50"
               >
                 Отправить
               </button>
@@ -115,7 +113,10 @@ const App = () => {
               </h2>
               <button
                 onClick={() => setStep(4)}
-                className="bg-gradient-to-r from-green-400 to-green-500 text-white py-3 px-6 rounded-full shadow-md hover:from-green-500 hover:to-green-600 transform transition-all duration-300 cursor-pointer active:opacity-50"
+                style={{
+                  background: "linear-gradient(to right, #34d399, #10b981)",
+                }}
+                className="text-white py-3 px-6 rounded-full shadow-md transform transition-all duration-300 cursor-pointer active:opacity-50"
               >
                 Подобрать тренера на основе анкеты
               </button>
@@ -124,36 +125,33 @@ const App = () => {
 
           {/* Шаг 4 - Анкеты тренеров */}
           {step === 4 && (
-            <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <h2 className="text-2xl font-semibold text-[#c3c3c3] text-center mb-6">
                 Выберите тренера
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {trainersData.map((trainer) => (
-                  <div
-                    key={trainer.id}
-                    className="bg-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300"
-                  >
-                    <div className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-gray-700">
-                        {trainer.name}
-                      </h3>
-                      <img
-                        className="w-[92px] h-[92px] rounded-full mx-auto"
-                        src={trainer.image}
-                        alt={trainer.name}
-                      />
-                      <button
-                        onClick={() => handleTrainerSelect(trainer.name)}
-                        className="bg-blue-500 text-white py-2 px-4 rounded-full mt-4 hover:bg-blue-600 transform transition-all duration-300 cursor-pointer active:opacity-50"
-                      >
-                        Выбрать
-                      </button>
-                    </div>
+              {trainersData.map((trainer) => (
+                <div
+                  key={trainer.name}
+                  className="bg-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300"
+                >
+                  <div className="p-6 text-center">
+                    <h3 className="text-lg font-semibold text-gray-700">
+                      {trainer.name}
+                    </h3>
+                    <button
+                      onClick={() => handleTrainerSelect(trainer.name)}
+                      style={{
+                        background:
+                          "linear-gradient(to right, #4f46e5, #9333ea)",
+                      }}
+                      className="text-white py-2 px-4 rounded-full mt-4 transform transition-all duration-300 cursor-pointer active:opacity-50"
+                    >
+                      Выбрать
+                    </button>
                   </div>
-                ))}
-              </div>
-            </>
+                </div>
+              ))}
+            </div>
           )}
 
           {/* Шаг 5 - Выбор тарифа */}
@@ -165,19 +163,28 @@ const App = () => {
               <div className="space-y-4">
                 <button
                   onClick={handlePayment}
-                  className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-full shadow-md hover:from-blue-600 hover:to-indigo-600 transform transition-all duration-300 w-full cursor-pointer active:opacity-50"
+                  style={{
+                    background: "linear-gradient(to right, #4f46e5, #9333ea)",
+                  }}
+                  className="text-white py-3 px-6 rounded-full shadow-md w-full transform transition-all duration-300 cursor-pointer active:opacity-50"
                 >
                   Тариф за 2 недели — 3990 руб
                 </button>
                 <button
                   onClick={handlePayment}
-                  className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-full shadow-md hover:from-blue-600 hover:to-indigo-600 transform transition-all duration-300 w-full cursor-pointer active:opacity-50"
+                  style={{
+                    background: "linear-gradient(to right, #4f46e5, #9333ea)",
+                  }}
+                  className="text-white py-3 px-6 rounded-full shadow-md w-full transform transition-all duration-300 cursor-pointer active:opacity-50"
                 >
                   Тариф за 1 месяц — 5990 руб
                 </button>
                 <button
                   onClick={handlePayment}
-                  className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-full shadow-md hover:from-blue-600 hover:to-indigo-600 transform transition-all duration-300 w-full cursor-pointer active:opacity-50"
+                  style={{
+                    background: "linear-gradient(to right, #4f46e5, #9333ea)",
+                  }}
+                  className="text-white py-3 px-6 rounded-full shadow-md w-full transform transition-all duration-300 cursor-pointer active:opacity-50"
                 >
                   Тариф за 3 месяца — 13990 руб
                 </button>
@@ -191,13 +198,15 @@ const App = () => {
               <h2 className="text-2xl font-semibold text-[#c3c3c3]">
                 Переходите к оплате через Юмани
               </h2>
-              <a
-                href="https://t.me/FitGuid_bot"
+              <button
                 type="submit"
-                className="bg-gradient-to-r from-green-400 to-green-500 text-white py-3 px-6 rounded-full shadow-lg hover:from-green-500 hover:to-green-600 transform transition-all duration-300 w-full cursor-pointer"
+                style={{
+                  background: "linear-gradient(to right, #34d399, #10b981)",
+                }}
+                className="text-white py-3 px-6 rounded-full shadow-lg w-full transform transition-all duration-300 cursor-pointer"
               >
                 Перейти к оплате
-              </a>
+              </button>
             </div>
           )}
         </form>
