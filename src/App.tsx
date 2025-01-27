@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <div className="App max-w-[1280px] mx-auto px-6 py-8 flex justify-center items-center min-h-screen">
-      <main className="space-y-8 w-full max-w-lg">
+      <main className="space-y-8 w-full max-w-2xl">
         <form action="#">
           {/* Рекламный баннер */}
           {step === 1 && (
@@ -152,16 +152,46 @@ const App = () => {
                       </h3>
                       <img
                         src={trainer.image}
-                        className="w-[82px] h-[82px] mx-auto rounded-full"
+                        className="w-[132px] h-[202px] object-cover mx-auto rounded-lg"
                         alt={trainer.name}
                       />
+                      <h4 className="text-sm my-4 font-semibold text-[#363636]">
+                        Анкета тренера
+                      </h4>
+                      <ul>
+                        <li className="text-[#111]">
+                          <strong>Опыт:</strong>{" "}
+                          <span className="text-[#333]">
+                            {trainer.anketa.experience}
+                          </span>
+                        </li>
+                        <li className="text-[#111]">
+                          <strong>Пол:</strong>{" "}
+                          <span className="text-[#333]">
+                            {" "}
+                            {trainer.anketa.sex}
+                          </span>
+                        </li>
+                        <li className="text-[#111]">
+                          <strong>Место жительства:</strong>{" "}
+                          <span className="text-[#333]">
+                            {trainer.anketa.location}
+                          </span>
+                        </li>
+                        <li className="text-[#111]">
+                          <strong>Количество студентов за все время:</strong>{" "}
+                          <span className="text-[#333]">
+                            {trainer.anketa.students}
+                          </span>
+                        </li>
+                      </ul>
                       <button
                         onClick={() => handleTrainerSelect(trainer.name)}
                         style={{
                           background:
                             "linear-gradient(to right, #4f46e5, #9333ea)",
                         }}
-                        className="text-white py-2 px-4 rounded-full mt-4 transform transition-all duration-300 cursor-pointer active:opacity-50"
+                        className="text-white py-2 px-4 rounded-full mt-0 transform transition-all duration-300 cursor-pointer active:opacity-50"
                       >
                         Выбрать
                       </button>
