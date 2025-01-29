@@ -13,6 +13,7 @@ import step3 from "./assets/steps/3.png";
 import step4 from "./assets/steps/4.png";
 import footerBg from "./assets/footer-bg.png";
 import mainBg from "./assets/main-bg.png";
+import rubbleIcon from "./assets/rubble.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -33,7 +34,7 @@ const App = () => {
       </header>
       <main className="max-w-3xl w-full flex">
         <div>
-          <h1 className="text-[50px] font-bold text-gray-900">
+          <h1 className="text-[50px] font-bold text-gray-900 leading-15">
             Приведи себя в лучшую форму своей жизни!
           </h1>
           <p className="text-gray-700 mt-2">
@@ -47,12 +48,17 @@ const App = () => {
         <img src={mainBg} alt="" className="max-w-[400px] object-cover" />
       </main>
 
-      <section className="mt-8 w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-xl font-bold text-purple-600">
-          Месяц тренировок с тренером{" "}
-          <span className="text-gray-900">по цене одной!</span>
-        </h2>
+      <section className="w-full max-w-3xl">
+        <div className="flex items-center justify-center">
+          <img src={rubbleIcon} className="w-20 mr-5" alt="" />
+          <h2 className="text-xl font-bold flex flex-col text-center">
+            <span className="text-[25px]"> Месяц тренировок с тренером </span>
+            <span className="text-gray-900 text-[50px]">по цене одной!</span>
+          </h2>
+        </div>
+      </section>
 
+      <section className="mt-8 w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
         <h3 className="text-lg font-semibold text-gray-900 mt-6">
           Как вы будете работать со своим тренером:
         </h3>
