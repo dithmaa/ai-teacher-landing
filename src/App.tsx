@@ -29,13 +29,13 @@ const settings = {
 const App = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col items-center p-6 pb-0">
-      <header className="w-full max-w-3xl">
+      <header className="w-full max-w-[1100px]">
         <img src={Logo} alt="FitMentor Logo" className="w-50 mb-4" />
       </header>
-      <main className="max-w-3xl w-full flex">
-        <div>
-          <h1 className="text-[50px] font-bold text-gray-900 leading-15">
-            Приведи себя в лучшую форму своей жизни!
+      <main className="max-w-[1100px] w-full flex relative min-h-[600px] xl:min-h-[700px]">
+        <div className="max-w-[500px] xl:max-w-[610px] pt-20">
+          <h1 className="text-[60px] xl:text-[75px] font-medium text-gray-900 leading-19">
+            Приведи себя <br /> в лучшую форму своей жизни!
           </h1>
           <p className="text-gray-700 mt-2">
             Преобразуйте фитнес и питание через персональные онлайн-тренировки:
@@ -45,10 +45,14 @@ const App = () => {
             Записаться
           </button>
         </div>
-        <img src={mainBg} alt="" className="max-w-[400px] object-cover" />
+        <img
+          src={mainBg}
+          alt=""
+          className="max-w-[500px] xl:max-w-[580px] object-cover absolute right-0"
+        />
       </main>
 
-      <section className="w-full max-w-3xl">
+      <section className="w-full max-w-[1100px]">
         <div className="flex items-center justify-center">
           <img src={rubbleIcon} className="w-20 mr-5" alt="" />
           <h2 className="text-xl font-bold flex flex-col text-center">
@@ -58,7 +62,7 @@ const App = () => {
         </div>
       </section>
 
-      <section className="mt-8 w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
+      <section className="mt-8 w-full max-w-[1100px] bg-white p-6 rounded-lg shadow-md">
         <h3 className="text-lg font-semibold text-gray-900 mt-6">
           Как вы будете работать со своим тренером:
         </h3>
@@ -95,7 +99,7 @@ const App = () => {
         </div>
       </section>
 
-      <section className="mt-8 w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
+      <section className="mt-8 w-full max-w-[1100px] bg-white p-6 rounded-lg shadow-md">
         <div className="grid grid-cols-1 gap-4">
           <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
             <p>
@@ -134,7 +138,7 @@ const App = () => {
         </div>
       </section>
 
-      <section className="mt-8 w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
+      <section className="mt-8 w-full max-w-[1100px] bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-xl font-bold text-gray-900 mb-4">
           Отзывы наших клиентов:
         </h2>
@@ -170,7 +174,7 @@ const App = () => {
         </Slider>
       </section>
 
-      <section className="mt-8 w-full max-w-3xl bg-white p-6 rounded-lg shadow-md text-center">
+      <section className="mt-8 w-full max-w-[1100px] bg-white p-6 rounded-lg shadow-md text-center">
         <img src={threeHundred} alt="threeHundred" />
         <h2 className="text-xl font-bold text-gray-900">
           Мы обладаем всеми возможными знаниями, которые идеально подойдут

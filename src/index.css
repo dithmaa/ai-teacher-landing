@@ -2,7 +2,8 @@
 
 body,
 html {
-  font-family: sans-serif;
+  font-family: "Muller Narrow", sans-serif;
+  font-family: "Muller", sans-serif;
   padding: 0;
   margin: 0;
 }
