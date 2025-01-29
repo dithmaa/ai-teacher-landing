@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
-/* body {
+body,
+html {
   font-family: sans-serif;
-  color: #fff;
-  background-color: #111;
+  padding: 0;
+  margin: 0;
 }
 
-#root {
+/* #root {
   background: url("./assets/background.jpg");
   background-position-x: center;
   position: relative;
