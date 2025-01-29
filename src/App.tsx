@@ -1,265 +1,155 @@
-import { useState } from "react";
-import blurImage from "./assets/blur-img.jpg";
-import { trainersData } from "./shared/constants/dummy-data";
+import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
 
 const App = () => {
-  const [step, setStep] = useState(1);
-  const [contact, setContact] = useState("");
-  const [selectedTrainer, setSelectedTrainer] = useState("");
-  const [isError, setIsError] = useState(false);
-
-  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (/^[0-9+]*$/.test(value)) {
-      setContact(value);
-    }
-    if (isError && contact.length >= 6) {
-      setIsError(false); // Сброс ошибки
-    }
-  };
-
-  const handleContactSubmit = () => {
-    if (contact.length >= 6) {
-      setIsError(false); // Сброс ошибки
-      setStep(3);
-    } else {
-      setIsError(true); // Устанавливаем ошибку
-    }
-  };
-
-  const handleTrainerSelect = (trainer: string) => {
-    setSelectedTrainer(trainer);
-    setStep(5);
-  };
-
-  const handlePayment = () => {
-    setStep(6);
-  };
-
   return (
-    <div className="App max-w-[1280px] mx-auto px-6 py-8 flex justify-center items-center min-h-screen">
-      <main className="space-y-8 w-full max-w-2xl">
-        <form action="#">
-          {/* Рекламный баннер */}
-          {step === 1 && (
-            <div
-              style={{
-                background: "linear-gradient(to right, #4f46e5, #9333ea)",
-              }}
-              className="text-white py-6 px-8 rounded-xl shadow-lg text-center my-[20px]"
-            >
-              <h2 className="text-lg lg:text-2xl font-extrabold">
-                Болит спина? Ответьте на 5 вопросов и получите идеальную
-                программу тренировок.
-              </h2>
-            </div>
-          )}
+    <div className="bg-gray-100 min-h-screen flex flex-col items-center p-6 text-center">
+      <header className="w-full max-w-3xl">
+        <img
+          src="logo.png"
+          alt="FitMentor Logo"
+          className="mx-auto w-24 mb-4"
+        />
+        <h1 className="text-3xl font-bold text-gray-900">
+          Приведи себя в лучшую форму своей жизни!
+        </h1>
+        <p className="text-gray-700 mt-2">
+          Преобразуйте фитнес и питание через персональные онлайн-тренировки:
+          чаты с тренером, живые видео и приложение для ваших целей.
+        </p>
+        <button className="mt-4 px-6 py-2 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700">
+          Записаться
+        </button>
+      </header>
 
-          {/* Шаг 1 - Прохождение квиза */}
-          {step === 1 && (
-            <div className="text-center space-y-6">
-              <h2 className="text-lg lg:text-2xl lg:font-semibold text-[#c3c3c3]">
-                Ответьте на 5 вопросов и получите программу
-              </h2>
-              <div className="mt-4">
-                <button
-                  onClick={() => setStep(2)}
-                  className="text-white py-3 px-6 rounded-full shadow-md transform transition-all duration-300 cursor-pointer active:opacity-50"
-                  style={{
-                    background: "linear-gradient(to right, #4f46e5, #9333ea)",
-                  }}
-                >
-                  Перейти к анкете
-                </button>
-              </div>
-            </div>
-          )}
+      <section className="mt-8 w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-xl font-bold text-purple-600">
+          Месяц тренировок с тренером{" "}
+          <span className="text-gray-900">по цене одной!</span>
+        </h2>
 
-          {/* Шаг 2 - Получение программы */}
-          {step === 2 && (
-            <div className="text-center space-y-6">
-              <h3 className="text-xl lg:text-3xl font-semibold text-[#c3c3c3]">
-                Ваша программа с записанными видео уже готова!
-              </h3>
-              <div className="bg-gray-200 h-40 w-full rounded-lg overflow-hidden shadow-lg">
-                <img
-                  src={blurImage}
-                  alt="Мини-апп"
-                  className="w-full h-full object-cover blur-[2px]"
-                />
-              </div>
-              <p className="text-sm lg:text-lg text-[#fff]">
-                Перейдите по данной ссылке или просто оставьте ваш номер, чтобы
-                мы могли вам прислать программу.
-              </p>
-              <input
-                type="tel"
-                placeholder="Введите номер"
-                value={contact}
-                onChange={handleContactChange}
-                maxLength={14}
-                className={`w-full p-4 text-lg border-2 rounded-lg focus:outline-none transition duration-300  ${
-                  isError
-                    ? "border-red-500 focus:ring-red-500 isError"
-                    : "border-gray-300 focus:ring-blue-500"
-                }`}
-              />
-              <button
-                onClick={handleContactSubmit}
-                style={{
-                  background: "linear-gradient(to right, #4f46e5, #9333ea)",
-                }}
-                className="text-white py-3 px-6 rounded-full shadow-lg w-full transform transition-all duration-300 cursor-pointer active:opacity-50"
-              >
-                Отправить
-              </button>
-            </div>
-          )}
+        <h3 className="text-lg font-semibold text-gray-900 mt-6">
+          Как вы будете работать со своим тренером:
+        </h3>
 
-          {/* Шаг 3 - Ускорение с тренером */}
-          {step === 3 && (
-            <div className="text-center space-y-6">
-              <h2 className="text-xl font-semibold text-[#c3c3c3]">
-                Тренировки с тренером ускоряют избавление от симптомов на 35%.
-              </h2>
-              <button
-                onClick={() => setStep(4)}
-                style={{
-                  background: "linear-gradient(to right, #34d399, #10b981)",
-                }}
-                className="text-white py-3 px-6 rounded-full shadow-md transform transition-all duration-300 cursor-pointer active:opacity-50"
-              >
-                Подобрать тренера на основе анкеты
-              </button>
-            </div>
-          )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          <div className="flex items-center">
+            <img src="icon1.png" alt="icon" className="w-10 h-10 mr-3" />
+            <p>Пройдите тест и подберите идеального тренера</p>
+          </div>
+          <div className="flex items-center">
+            <img src="icon2.png" alt="icon" className="w-10 h-10 mr-3" />
+            <p>Видео-звонок для составления плана тренировок и питания</p>
+          </div>
+          <div className="flex items-center">
+            <img src="icon3.png" alt="icon" className="w-10 h-10 mr-3" />
+            <p>Выполняйте тренировки, разработанные специально для вас</p>
+          </div>
+          <div className="flex items-center">
+            <img src="icon4.png" alt="icon" className="w-10 h-10 mr-3" />
+            <p>Будьте очень мотивированы в время еженедельных проверок</p>
+          </div>
+        </div>
+      </section>
 
-          {/* Шаг 4 - Анкеты тренеров */}
-          {step === 4 && (
-            <>
-              <h2 className="text-2xl font-semibold text-[#c3c3c3] text-center mb-6">
-                Выберите тренера
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {trainersData.map((trainer) => (
-                  <div
-                    key={trainer.name}
-                    className="bg-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300"
-                  >
-                    <div className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-[#363636]">
-                        {trainer.name}
-                      </h3>
-                      <img
-                        src={trainer.image}
-                        className="w-[132px] h-[202px] object-cover mx-auto rounded-lg"
-                        alt={trainer.name}
-                      />
-                      <h4 className="text-sm my-4 font-semibold text-[#363636]">
-                        Анкета тренера
-                      </h4>
-                      <ul>
-                        <li className="text-[#111]">
-                          <strong>Опыт:</strong>{" "}
-                          <span className="text-[#333]">
-                            {trainer.anketa.experience}
-                          </span>
-                        </li>
-                        <li className="text-[#111]">
-                          <strong>Пол:</strong>{" "}
-                          <span className="text-[#333]">
-                            {" "}
-                            {trainer.anketa.sex}
-                          </span>
-                        </li>
-                        <li className="text-[#111]">
-                          <strong>Место жительства:</strong>{" "}
-                          <span className="text-[#333]">
-                            {trainer.anketa.location}
-                          </span>
-                        </li>
-                        <li className="text-[#111]">
-                          <strong>Количество студентов за все время:</strong>{" "}
-                          <span className="text-[#333]">
-                            {trainer.anketa.students}
-                          </span>
-                        </li>
-                      </ul>
-                      <button
-                        onClick={() => handleTrainerSelect(trainer.name)}
-                        style={{
-                          background:
-                            "linear-gradient(to right, #4f46e5, #9333ea)",
-                        }}
-                        className="text-white py-2 px-4 rounded-full mt-0 transform transition-all duration-300 cursor-pointer active:opacity-50"
-                      >
-                        Выбрать
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
+      <section className="mt-8 w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
+        <div className="grid grid-cols-1 gap-4">
+          <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
+            <p>
+              <strong>Подберем проверенного тренера</strong> на базе вашего
+              запроса
+            </p>
+            <img src="icon1.png" alt="icon" className="w-10 h-10" />
+          </div>
+          <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
+            <p className="text-purple-600">
+              <strong>Гибкое расписание.</strong> Наши тренера работают в онлайн
+              режиме 24/7
+            </p>
+            <img src="icon1.png" alt="icon" className="w-10 h-10" />
+          </div>
+          <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
+            <p>
+              <strong>Высокая вовлеченность тренера</strong> и контроль техники
+            </p>
+            <img src="icon1.png" alt="icon" className="w-10 h-10" />
+          </div>
+          <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
+            <p className="text-purple-600">
+              <strong>Наши тренера дадут максимальную поддержку</strong> и
+              заботу о вас
+            </p>
+            <img src="icon1.png" alt="icon" className="w-10 h-10" />
+          </div>
+          <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
+            <p>
+              <strong>Мы подготовим персональную программу</strong> под ваши
+              особенности и предпочтения
+            </p>
+            <img src="icon1.png" alt="icon" className="w-10 h-10" />
+          </div>
+        </div>
+      </section>
 
-          {/* Шаг 5 - Выбор тарифа */}
-          {step === 5 && selectedTrainer && (
-            <div className="text-center space-y-6">
-              <h2 className="text-2xl font-semibold text-[#c3c3c3]">
-                Выберите тариф для тренировки с {selectedTrainer}
-              </h2>
-              <div className="space-y-4">
-                <button
-                  onClick={handlePayment}
-                  style={{
-                    background: "linear-gradient(to right, #4f46e5, #9333ea)",
-                  }}
-                  className="text-white py-3 px-6 rounded-full shadow-md w-full transform transition-all duration-300 cursor-pointer active:opacity-50"
-                >
-                  Тариф за 2 недели — 3990 руб
-                </button>
-                <button
-                  onClick={handlePayment}
-                  style={{
-                    background: "linear-gradient(to right, #4f46e5, #9333ea)",
-                  }}
-                  className="text-white py-3 px-6 rounded-full shadow-md w-full transform transition-all duration-300 cursor-pointer active:opacity-50"
-                >
-                  Тариф за 1 месяц — 5990 руб
-                </button>
-                <button
-                  onClick={handlePayment}
-                  style={{
-                    background: "linear-gradient(to right, #4f46e5, #9333ea)",
-                  }}
-                  className="text-white py-3 px-6 rounded-full shadow-md w-full transform transition-all duration-300 cursor-pointer active:opacity-50"
-                >
-                  Тариф за 3 месяца — 13990 руб
-                </button>
-              </div>
-            </div>
-          )}
+      <section className="mt-8 w-full max-w-3xl bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-xl font-bold text-gray-900 mb-4">
+          Отзывы наших клиентов:
+        </h2>
+        <Swiper spaceBetween={10} slidesPerView={1} className="w-full">
+          <SwiperSlide>
+            <img
+              src="review1.png"
+              alt="Review 1"
+              className="w-full rounded-lg"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="review2.png"
+              alt="Review 2"
+              className="w-full rounded-lg"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="review3.png"
+              alt="Review 3"
+              className="w-full rounded-lg"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="review4.png"
+              alt="Review 4"
+              className="w-full rounded-lg"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="review5.png"
+              alt="Review 5"
+              className="w-full rounded-lg"
+            />
+          </SwiperSlide>
+        </Swiper>
+      </section>
 
-          {/* Шаг 6 - Экран оплаты */}
-          {step === 6 && (
-            <div className="text-center space-y-6">
-              <h2 className="text-2xl font-semibold text-[#c3c3c3]">
-                Переходите к оплате через Юмани
-              </h2>
-              <a
-                href="https://yoomani.ru/"
-                type="submit"
-                style={{
-                  background: "linear-gradient(to right, #34d399, #10b981)",
-                }}
-                className="text-white py-3 px-6 rounded-full shadow-lg w-full transform transition-all duration-300 cursor-pointer"
-              >
-                Перейти к оплате
-              </a>
-            </div>
-          )}
-        </form>
-      </main>
+      <section className="mt-8 w-full max-w-3xl bg-white p-6 rounded-lg shadow-md text-center">
+        <h2 className="text-xl font-bold text-gray-900">
+          Мы обладаем всеми возможными знаниями, которые идеально подойдут
+          именно вам!
+        </h2>
+        <p className="text-gray-700 mt-2">
+          От бодибилдинга до послеродового периода, гормональных и медицинских
+          проблем.
+        </p>
+        <button className="mt-4 px-6 py-3 bg-purple-600 text-white rounded-full shadow-lg text-lg font-semibold hover:bg-purple-700">
+          Получить
+        </button>
+        <p className="text-gray-500 mt-2">
+          Бесплатную персональную программу тренировок
+        </p>
+      </section>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-body {
+/* body {
   font-family: sans-serif;
   color: #fff;
   background-color: #111;
@@ -39,4 +39,4 @@ input.isError {
   #root {
     background-position-y: -70px;
   }
-}
+} */
