@@ -32,8 +32,8 @@ const App = () => {
       <header className="w-full max-w-[1100px]">
         <img src={Logo} alt="FitMentor Logo" className="w-50 mb-4" />
       </header>
-      <main className="max-w-[1100px] w-full flex relative min-h-[600px] xl:min-h-[700px]">
-        <div className="max-w-[500px] xl:max-w-[610px] pt-20">
+      <main className="max-w-[1100px] w-full flex relative mim-h-[auto] mb-20 lg:mb-0 lg:min-h-[600px] xl:min-h-[700px]">
+        <div className="max-w-[500px] xl:max-w-[610px] pt-10 lg:pt-20">
           <h1 className="text-[60px] xl:text-[75px] font-medium text-gray-900 leading-19">
             Приведи себя <br /> в лучшую форму своей жизни!
           </h1>
@@ -48,7 +48,7 @@ const App = () => {
         <img
           src={mainBg}
           alt=""
-          className="max-w-[500px] xl:max-w-[580px] object-cover absolute right-0"
+          className="opacity-0 lg:opacity-[1] max-w-[500px] xl:max-w-[580px] object-cover absolute right-0"
         />
       </main>
 
