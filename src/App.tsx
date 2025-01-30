@@ -141,44 +141,50 @@ const App = () => {
         </section>
 
         <section className="mt-8 w-full">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">
+          <h2 className="text-[50px] font-[500] text-gray-900 mb-4 text-center">
             Отзывы наших клиентов:
           </h2>
-          <Slider {...settings} className="w-full">
-            <div>
-              <img
-                src={Testimonial1}
-                alt="Review 1"
-                className="w-full rounded-lg"
-              />
-            </div>
-            <div>
-              <img
-                src={Testimonial1}
-                alt="Review 1"
-                className="w-full rounded-lg"
-              />
-            </div>
-            <div>
-              <img
-                src={Testimonial1}
-                alt="Review 1"
-                className="w-full rounded-lg"
-              />
-            </div>
-            <div>
-              <img
-                src={Testimonial1}
-                alt="Review 1"
-                className="w-full rounded-lg"
-              />
-            </div>
-          </Slider>
+          <div className="mx-auto">
+            <Slider {...settings} className="w-full mx-auto">
+              <div>
+                <img
+                  src={Testimonial1}
+                  alt="Review 1"
+                  className="w-[600px] rounded-lg mx-auto"
+                />
+              </div>
+              <div>
+                <img
+                  src={Testimonial1}
+                  alt="Review 1"
+                  className="w-[600px] rounded-lg mx-auto"
+                />
+              </div>
+              <div>
+                <img
+                  src={Testimonial1}
+                  alt="Review 1"
+                  className="w-[600px] rounded-lg mx-auto"
+                />
+              </div>
+              <div>
+                <img
+                  src={Testimonial1}
+                  alt="Review 1"
+                  className="w-[600px] rounded-lg mx-auto"
+                />
+              </div>
+            </Slider>
+          </div>
         </section>
 
         <section className="mt-8 w-full p-6 text-center">
-          <img src={threeHundred} alt="threeHundred" className="mx-auto" />
-          <h2 className="text-3xl font-bold text-gray-900">
+          <img
+            src={threeHundred}
+            alt="threeHundred"
+            className="mx-auto max-w-[900px] w-full"
+          />
+          <h2 className="text-3xl font-[500] text-gray-900">
             Мы обладаем всеми возможными знаниями, которые идеально подойдут
             именно вам!
           </h2>
