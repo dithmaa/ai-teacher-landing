@@ -31,6 +31,12 @@ p {
   font-weight: 700; /* Жирный */
   font-style: normal;
 }
+
+@media screen and (max-width: 768px) {
+  .main-layout {
+    width: 100%;
+  }
+}
 /* #root {
   background: url("./assets/background.jpg");
   background-position-x: center;

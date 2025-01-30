@@ -38,15 +38,15 @@ const App = () => {
         <div className="container max-w-[90%] mx-auto">
           <div className="main-content w-full flex">
             <div className="max-w-[630px]">
-              <h1 className="text-[60px] xl:text-[75px] font-medium text-gray-900 mb-6 leading-19">
+              <h1 className="text-[45px] lg:text-[60px] xl:text-[75px] font-medium text-gray-900 mb-6 leading-13 lg:leading-19">
                 Приведи себя <br /> в лучшую форму своей жизни!
               </h1>
-              <p className="text-[#000] mt-2 text-[23px] my-5 font-[400]">
+              <p className="text-[#000] mt-2 text-[18px] lg:text-[23px] my-5 font-[400]">
                 Преобразуйте фитнес и питание через персональные
                 онлайн-тренировки: чаты с тренером, живые видео и приложение для
                 ваших целей.
               </p>
-              <button className="cursor-pointer transform translate-x-[120px] mt-4 px-15 py-6 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 font-[500] text-[35px]">
+              <button className="cursor-pointer transform lg:translate-x-[120px] mt-4 px-15 py-6 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 font-[500] text-[26px] lg:text-[35px]">
                 Записаться
               </button>
             </div>
