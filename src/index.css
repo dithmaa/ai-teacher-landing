@@ -37,13 +37,18 @@ main {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-y: 40px;
-
   background-position-x: right;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .main-layout {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    background: transparent;
   }
 }
 /* #root {

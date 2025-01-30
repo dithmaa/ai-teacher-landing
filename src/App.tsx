@@ -36,11 +36,11 @@ const App = () => {
         </header>
         <div className="container max-w-[90%] mx-auto">
           <div className="main-content w-full flex">
-            <div className="max-w-[630px]">
+            <div className="xl:max-w-[630px] lg:max-w-[500px] md:max-w-[370px] max-w-full">
               <h1 className="text-[45px] lg:text-[60px] xl:text-[75px] font-medium text-gray-900 mb-6 leading-13 lg:leading-19">
                 Приведи себя <br /> в лучшую форму своей жизни!
               </h1>
-              <p className="text-[#000] mt-2 text-[18px] lg:text-[23px] my-5 font-[400]">
+              <p className="text-[#000] mt-2 text-[18px] lg:text-[20px] xl:text-[23px] my-5 font-[400]">
                 Преобразуйте фитнес и питание через персональные
                 онлайн-тренировки: чаты с тренером, живые видео и приложение для
                 ваших целей.
