@@ -40,12 +40,12 @@ const App = () => {
               <h1 className="text-[45px] lg:text-[60px] xl:text-[75px] font-medium text-gray-900 mb-6 leading-13 lg:leading-19">
                 Приведи себя <br /> в лучшую форму своей жизни!
               </h1>
-              <p className="text-[#000] mt-2 text-[18px] lg:text-[20px] xl:text-[23px] my-5 font-[400]">
+              <p className="text-[#000] mt-2 text-[18px] lg:text-[20px] xl:text-[23px] my-3 font-[400]">
                 Преобразуйте фитнес и питание через персональные
                 онлайн-тренировки: чаты с тренером, живые видео и приложение для
                 ваших целей.
               </p>
-              <button className="cursor-pointer transform lg:translate-x-[120px] mt-4 px-15 py-6 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 font-[500] text-[26px] lg:text-[35px]">
+              <button className="cursor-pointer transform lg:translate-x-[120px] mt-0 px-15 py-6 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 font-[500] text-[26px] lg:text-[35px]">
                 Записаться
               </button>
             </div>
@@ -54,7 +54,7 @@ const App = () => {
       </main>
 
       <div className="container max-w-[90%] mx-auto">
-        <section className="w-full py-10 mt-10 lg:mt-10 bg-white rounded-3xl">
+        <section className="py-10 mt-10 lg:mt-10 bg-white rounded-[50px] w-[70%] mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-center">
             <img src={rubbleIcon} className="w-20 mr-5" alt="" />
             <h2 className="text-xl font-bold flex flex-col text-center">
@@ -103,42 +103,42 @@ const App = () => {
           </div>
         </section>
 
-        <section className="mt-8 w-full bg-white p-6 rounded-lg shadow-md">
+        <section className="mt-8 w-fullp-6">
           <div className="grid grid-cols-1 gap-4">
-            <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
-              <p>
+            <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
+              <p className="text-[30px]">
                 <strong>Подберем проверенного тренера</strong> на базе вашего
                 запроса
               </p>
-              <img src={features1} alt="icon" className="w-10 h-10" />
+              <img src={features1} alt="icon" className="w-[160px]" />
             </div>
-            <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
-              <p className="text-purple-600">
+            <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
+              <p className="text-purple-600 text-[30px]">
                 <strong>Гибкое расписание.</strong> Наши тренера работают в
                 онлайн режиме 24/7
               </p>
-              <img src={features2} alt="icon" className="w-10 h-10" />
+              <img src={features2} alt="icon" className="w-[160px]" />
             </div>
-            <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
-              <p>
+            <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
+              <p className="text-[30px]">
                 <strong>Высокая вовлеченность тренера</strong> и контроль
                 техники
               </p>
-              <img src={features3} alt="icon" className="w-10 h-10" />
+              <img src={features3} alt="icon" className="w-[160px]" />
             </div>
-            <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
-              <p className="text-purple-600">
+            <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
+              <p className="text-purple-600 text-[30px]">
                 <strong>Наши тренера дадут максимальную поддержку</strong> и
                 заботу о вас
               </p>
-              <img src={features4} alt="icon" className="w-10 h-10" />
+              <img src={features4} alt="icon" className="w-[160px]" />
             </div>
-            <div className="flex justify-between items-center p-4 rounded-lg bg-gray-50">
-              <p>
+            <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
+              <p className="text-[30px]">
                 <strong>Мы подготовим персональную программу</strong> под ваши
                 особенности и предпочтения
               </p>
-              <img src={features5} alt="icon" className="w-10 h-10" />
+              <img src={features5} alt="icon" className="w-[160px]" />
             </div>
           </div>
         </section>
