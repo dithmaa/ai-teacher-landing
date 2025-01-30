@@ -28,12 +28,12 @@ const settings = {
 const App = () => {
   return (
     <div className="min-h-screen flex flex-col items-center main-layout">
-      <header className="w-full">
-        <div className="container max-w-[90%] mx-auto my-[50px]">
-          <img src={Logo} alt="FitMentor Logo" className="w-60 mb-4" />
-        </div>
-      </header>
       <main className="w-full">
+        <header className="w-full">
+          <div className="container max-w-[90%] mx-auto my-[50px]">
+            <img src={Logo} alt="FitMentor Logo" className="w-60 mb-4" />
+          </div>
+        </header>
         <div className="container max-w-[90%] mx-auto">
           <div className="main-content w-full flex">
             <div className="max-w-[630px]">
@@ -50,7 +50,11 @@ const App = () => {
               </button>
             </div>
           </div>
+        </div>
+      </main>
 
+      <div className="container max-w-[90%] mx-auto">
+        <section className="w-full py-10 mt-10 lg:mt-10 bg-white rounded-3xl">
           <div className="flex flex-col lg:flex-row items-center justify-center">
             <img src={rubbleIcon} className="w-20 mr-5" alt="" />
             <h2 className="text-xl font-bold flex flex-col text-center">
@@ -58,40 +62,37 @@ const App = () => {
               <span className="text-gray-900 text-[50px]">по цене одной!</span>
             </h2>
           </div>
-        </div>
-      </main>
-
-      <div className="container max-w-[90%] mx-auto">
-        <section className="mt-8 w-full bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-lg font-semibold text-gray-900 mt-6">
-            Как вы будете работать со своим тренером:
+        </section>
+        <section className="mt-8 w-full">
+          <h3 className="text-[50px] font-semibold text-gray-900 mt-6 text-center leading-16">
+            Как вы будете работать <br /> со своим тренером:
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
             <div className="flex items-center flex-col">
               <div className="flex items-center">
-                <span>1</span>
+                <span className="text-[40px] lg:text-[45px] mr-[5px]">1</span>
                 <img src={step1} alt="" />
               </div>
               <p>Пройдите тест и подберите идеального тренера</p>
             </div>
             <div className="flex items-center flex-col">
               <div className="flex items-center">
-                <span>2</span>
+                <span className="text-[40px] lg:text-[45px] mr-[5px]">2</span>
                 <img src={step2} alt="" />
               </div>
               <p>Видео-звонок для составления плана тренировок и питания</p>
             </div>
             <div className="flex items-center flex-col">
               <div className="flex items-center">
-                <span>3</span>
+                <span className="text-[40px] lg:text-[45px] mr-[5px]">3</span>
                 <img src={step3} alt="" />
               </div>
               <p>Выполняйте тренировки, разработанные специально для вас</p>
             </div>
             <div className="flex items-center flex-col">
               <div className="flex items-center">
-                <span>4</span>
+                <span className="text-[40px] lg:text-[45px] mr-[5px]">4</span>
                 <img src={step4} alt="" />
               </div>
               <p>Будьте очень мотивированы в время еженедельных проверок</p>

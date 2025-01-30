@@ -32,6 +32,15 @@ p {
   font-style: normal;
 }
 
+main {
+  background: url("./assets/main-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 40px;
+
+  background-position-x: right;
+}
+
 @media screen and (max-width: 768px) {
   .main-layout {
     width: 100%;
