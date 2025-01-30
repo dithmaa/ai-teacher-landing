@@ -8,6 +8,29 @@ html {
   margin: 0;
 }
 
+.main-layout {
+  background: url("./assets/main-layout-bg.jpg");
+  background-position-x: center;
+  background-size: cover;
+  max-width: 1264px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.montserrat-regular,
+p {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Обычный */
+  font-style: normal;
+}
+
+.montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700; /* Жирный */
+  font-style: normal;
+}
 /* #root {
   background: url("./assets/background.jpg");
   background-position-x: center;
