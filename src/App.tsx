@@ -68,30 +68,33 @@ const App = () => {
             Как вы будете работать <br /> со своим тренером:
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-            <div className="flex items-center flex-col">
-              <div className="flex items-center">
+          <div className="flex gap-9 mt-20 flex-wrap">
+            <div className="flex items-center flex-col bg-white rounded-[5%] md:rounded-[10%] lg:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
+              <div className="flex items-center transform translate-y-[-45%]">
                 <span className="text-[40px] lg:text-[45px] mr-[5px]">1</span>
                 <img src={step1} alt="" />
               </div>
               <p>Пройдите тест и подберите идеального тренера</p>
             </div>
-            <div className="flex items-center flex-col">
-              <div className="flex items-center">
+            <div className="flex items-center flex-col bg-white rounded-[5%] md:rounded-[10%] lg:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
+              <div className="flex items-center transform translate-y-[-45%]">
                 <span className="text-[40px] lg:text-[45px] mr-[5px]">2</span>
                 <img src={step2} alt="" />
               </div>
-              <p>Видео-звонок для составления плана тренировок и питания</p>
+              <p>
+                Видеозвонок для согласования индивидуального плана упражнений и
+                питания
+              </p>
             </div>
-            <div className="flex items-center flex-col">
-              <div className="flex items-center">
+            <div className="flex items-center flex-col bg-white rounded-[5%] md:rounded-[10%] lg:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
+              <div className="flex items-center transform translate-y-[-45%]">
                 <span className="text-[40px] lg:text-[45px] mr-[5px]">3</span>
                 <img src={step3} alt="" />
               </div>
               <p>Выполняйте тренировки, разработанные специально для вас</p>
             </div>
-            <div className="flex items-center flex-col">
-              <div className="flex items-center">
+            <div className="flex items-center flex-col bg-white rounded-[5%] md:rounded-[10%] lg:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
+              <div className="flex items-center transform translate-y-[-45%]">
                 <span className="text-[40px] lg:text-[45px] mr-[5px]">4</span>
                 <img src={step4} alt="" />
               </div>
