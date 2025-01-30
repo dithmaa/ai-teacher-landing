@@ -12,7 +12,6 @@ import step2 from "./assets/steps/2.png";
 import step3 from "./assets/steps/3.png";
 import step4 from "./assets/steps/4.png";
 import footerBg from "./assets/footer-bg.png";
-import mainBg from "./assets/main-bg.png";
 import rubbleIcon from "./assets/rubble.png";
 
 import "slick-carousel/slick/slick.css";
@@ -52,7 +51,7 @@ const App = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center">
+          <div className="flex flex-col lg:flex-row items-center justify-center">
             <img src={rubbleIcon} className="w-20 mr-5" alt="" />
             <h2 className="text-xl font-bold flex flex-col text-center">
               <span className="text-[25px]"> Месяц тренировок с тренером </span>
