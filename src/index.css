@@ -8,6 +8,11 @@ html {
   margin: 0;
 }
 
+body {
+  background: url("./assets/main-layout-bg.jpg");
+  background-size: cover;
+}
+
 .main-layout {
   max-width: 1264px;
   width: 90%;

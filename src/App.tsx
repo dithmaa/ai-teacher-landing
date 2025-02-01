@@ -56,7 +56,7 @@ const App = () => {
       </main>
       <div className="min-h-screen flex flex-col items-center main-layout">
         <div className="container max-w-[90%] mx-auto">
-          <section className="py-10 mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-[70%] mx-auto">
+          <section className="py-10 mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-[90%] mx-auto">
             <div className="flex flex-col lg:flex-row items-center justify-center">
               <img src={rubbleIcon} className="w-20 mr-5" alt="" />
               <h2 className="text-xl font-bold flex flex-col text-center">
