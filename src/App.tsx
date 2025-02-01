@@ -122,7 +122,7 @@ const App = () => {
             <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
               <p className="text-[30px]">
                 <strong>Высокая вовлеченность тренера</strong> и контроль
-                техники
+                техники.
               </p>
               <img src={features3} alt="icon" className="w-[160px]" />
             </div>
