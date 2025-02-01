@@ -25,6 +25,9 @@ const settings = {
   slidesToScroll: 1, // Количество слайдов при прокрутке
 };
 
+const apply = () => {
+  window.location.href = "/quiz";
+};
 const App = () => {
   return (
     <div className="max-w-[1700px] mx-auto">
@@ -46,7 +49,10 @@ const App = () => {
                   онлайн-тренировки: чаты с тренером, живые видео и приложение
                   для ваших целей.
                 </p>
-                <button className="cursor-pointer transform lg:translate-x-[120px] mt-3 lg:mt-5 px-10 lg:px-15 py-4 lg:py-6 bg-gradient-to-r from-[#6F3DDE] to-[#9261FF] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[26px] lg:text-[35px] bg-clip-border">
+                <button
+                  onClick={apply}
+                  className="cursor-pointer transform lg:translate-x-[120px] mt-3 lg:mt-5 px-10 lg:px-15 py-4 lg:py-6 bg-gradient-to-r from-[#6F3DDE] to-[#9261FF] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[26px] lg:text-[35px] bg-clip-border"
+                >
                   Записаться
                 </button>
               </div>
