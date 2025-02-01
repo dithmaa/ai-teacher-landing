@@ -9,9 +9,6 @@ html {
 }
 
 .main-layout {
-  background: url("./assets/main-layout-bg.jpg");
-  background-position-x: center;
-  background-size: cover;
   max-width: 1264px;
   width: 90%;
   margin: 0 auto;
@@ -30,30 +27,4 @@ p {
   font-optical-sizing: auto;
   font-weight: 700; /* Жирный */
   font-style: normal;
-}
-
-main {
-  background: url("./assets/main-bg.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-y: 70px;
-  background-position-x: right;
-}
-
-@media screen and (max-width: 1024px) {
-  .main-layout {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  main {
-    background: transparent;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  body {
-    opacity: 0.4;
-  }
 }
