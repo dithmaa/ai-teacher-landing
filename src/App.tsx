@@ -28,6 +28,7 @@ const settings = {
 const apply = () => {
   window.location.href = "/quiz";
 };
+
 const App = () => {
   return (
     <div className="max-w-[1700px] mx-auto">
