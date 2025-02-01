@@ -1,8 +1,8 @@
 import { useState } from "react";
-import blurImage from "./assets/blur-img.jpg";
-import { trainersData } from "./shared/constants/dummy-data";
+import blurImage from "../assets/blur-img.jpg";
+import { trainersData } from "../shared/constants/dummy-data";
 
-const ModalWindow = () => {
+const Quiz = () => {
   const [step, setStep] = useState(1);
   const [contact, setContact] = useState("");
   const [selectedTrainer, setSelectedTrainer] = useState("");
@@ -58,7 +58,7 @@ const ModalWindow = () => {
           {/* Шаг 1 - Прохождение квиза */}
           {step === 1 && (
             <div className="text-center space-y-6">
-              <h2 className="text-lg lg:text-2xl lg:font-semibold text-[#c3c3c3]">
+              <h2 className="text-lg lg:text-2xl lg:font-semibold text-[#838383]">
                 Ответьте на 5 вопросов и получите программу
               </h2>
               <div className="mt-4">
@@ -78,7 +78,7 @@ const ModalWindow = () => {
           {/* Шаг 2 - Получение программы */}
           {step === 2 && (
             <div className="text-center space-y-6">
-              <h3 className="text-xl lg:text-3xl font-semibold text-[#c3c3c3]">
+              <h3 className="text-xl lg:text-3xl font-semibold text-[#838383]">
                 Ваша программа с записанными видео уже готова!
               </h3>
               <div className="bg-gray-200 h-40 w-full rounded-lg overflow-hidden shadow-lg">
@@ -88,7 +88,7 @@ const ModalWindow = () => {
                   className="w-full h-full object-cover blur-[2px]"
                 />
               </div>
-              <p className="text-sm lg:text-lg text-[#fff]">
+              <p className="text-sm lg:text-lg text-[#838383]">
                 Перейдите по данной ссылке или просто оставьте ваш номер, чтобы
                 мы могли вам прислать программу.
               </p>
@@ -119,7 +119,7 @@ const ModalWindow = () => {
           {/* Шаг 3 - Ускорение с тренером */}
           {step === 3 && (
             <div className="text-center space-y-6">
-              <h2 className="text-xl font-semibold text-[#c3c3c3]">
+              <h2 className="text-xl font-semibold text-[#838383]">
                 Тренировки с тренером ускоряют избавление от симптомов на 35%.
               </h2>
               <button
@@ -137,7 +137,7 @@ const ModalWindow = () => {
           {/* Шаг 4 - Анкеты тренеров */}
           {step === 4 && (
             <>
-              <h2 className="text-2xl font-semibold text-[#c3c3c3] text-center mb-6">
+              <h2 className="text-2xl font-semibold text-[#838383] text-center mb-6">
                 Выберите тренера
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -205,7 +205,7 @@ const ModalWindow = () => {
           {/* Шаг 5 - Выбор тарифа */}
           {step === 5 && selectedTrainer && (
             <div className="text-center space-y-6">
-              <h2 className="text-2xl font-semibold text-[#c3c3c3]">
+              <h2 className="text-2xl font-semibold text-[#838383]">
                 Выберите тариф для тренировки с {selectedTrainer}
               </h2>
               <div className="space-y-4">
@@ -243,7 +243,7 @@ const ModalWindow = () => {
           {/* Шаг 6 - Экран оплаты */}
           {step === 6 && (
             <div className="text-center space-y-6">
-              <h2 className="text-2xl font-semibold text-[#c3c3c3]">
+              <h2 className="text-2xl font-semibold text-[#838383]">
                 Переходите к оплате через Юмани
               </h2>
               <a
@@ -264,4 +264,4 @@ const ModalWindow = () => {
   );
 };
 
-export default ModalWindow;
+export default Quiz;
