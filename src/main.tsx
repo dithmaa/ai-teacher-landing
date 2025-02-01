@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import Quiz from "./pages/quiz";
+import Quiz from "./pages/Quiz";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
