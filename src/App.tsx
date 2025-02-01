@@ -27,8 +27,8 @@ const settings = {
 
 const App = () => {
   return (
-    <div>
-      <main className="w-full bg-none md:bg-[url('./assets/main-bg.png')] md:bg-contain md:bg-no-repeat md:bg-[right_70px] 2xl:bg-[url('./assets/main-bg-full.png')]">
+    <div className="max-w-[1700px] mx-auto">
+      <main className="w-full bg-none md:bg-[url('./assets/main-bg.png')] md:bg-contain md:bg-no-repeat md:bg-[right_70px] 2xl:bg-[url('./assets/main-bg-full.png')] 2xl:bg-[length:800px] pb-[100px]">
         <div className="main-layout">
           <header className="w-full">
             <div className="container max-w-[90%] mx-auto my-[50px]">
