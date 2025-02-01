@@ -56,7 +56,7 @@ const App = () => {
       </main>
       <div className="min-h-screen flex flex-col items-center main-layout">
         <div className="container max-w-[90%] mx-auto">
-          <section className="py-10 mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-[90%] mx-auto">
+          <section className="py-10 mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-[95%] mx-auto">
             <div className="flex flex-col lg:flex-row items-center justify-center">
               <img src={rubbleIcon} className="w-20 mr-5" alt="" />
               <h2 className="text-xl font-bold flex flex-col text-center">
@@ -64,26 +64,26 @@ const App = () => {
                   {" "}
                   Месяц тренировок с тренером{" "}
                 </span>
-                <span className="text-gray-900 text-[50px]">
+                <span className="text-gray-900 text-[50px] leading-10">
                   по цене одной!
                 </span>
               </h2>
             </div>
           </section>
           <section className="mt-8 w-full">
-            <h3 className="text-[50px] font-semibold text-gray-900 mt-6 text-center leading-16">
+            <h3 className="text-[50px] font-semibold text-[#353532] mt-6 text-center leading-16">
               Как вы будете работать <br /> со своим тренером:
             </h3>
 
             <div className="flex gap-9 mt-20 flex-wrap">
-              <div className="flex items-center flex-col bg-white rounded-[5%] md:rounded-[10%] lg:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
+              <div className="flex items-center flex-col bg-white rounded-[20px] lg:rounded-[40px] xl:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
                 <div className="flex items-center transform translate-y-[-45%]">
                   <span className="text-[40px] lg:text-[45px] mr-[5px]">1</span>
                   <img src={step1} alt="" />
                 </div>
                 <p>Пройдите тест и подберите идеального тренера</p>
               </div>
-              <div className="flex items-center flex-col bg-white rounded-[5%] md:rounded-[10%] lg:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
+              <div className="flex items-center flex-col bg-white rounded-[20px] lg:rounded-[40px] xl:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
                 <div className="flex items-center transform translate-y-[-45%]">
                   <span className="text-[40px] lg:text-[45px] mr-[5px]">2</span>
                   <img src={step2} alt="" />
@@ -93,14 +93,14 @@ const App = () => {
                   и питания
                 </p>
               </div>
-              <div className="flex items-center flex-col bg-white rounded-[5%] md:rounded-[10%] lg:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
+              <div className="flex items-center flex-col bg-white rounded-[20px] lg:rounded-[40px] xl:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
                 <div className="flex items-center transform translate-y-[-45%]">
                   <span className="text-[40px] lg:text-[45px] mr-[5px]">3</span>
                   <img src={step3} alt="" />
                 </div>
                 <p>Выполняйте тренировки, разработанные специально для вас</p>
               </div>
-              <div className="flex items-center flex-col bg-white rounded-[5%] md:rounded-[10%] lg:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
+              <div className="flex items-center flex-col bg-white rounded-[20px] lg:rounded-[40px] xl:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-[100%] md:w-[47%] lg:w-[21%]">
                 <div className="flex items-center transform translate-y-[-45%]">
                   <span className="text-[40px] lg:text-[45px] mr-[5px]">4</span>
                   <img src={step4} alt="" />
@@ -112,40 +112,40 @@ const App = () => {
 
           <section className="mt-8 w-fullp-6">
             <div className="grid grid-cols-1 gap-4">
-              <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
+              <div className="flex justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform hover:translate-y-[-10px] hover:opacity-40">
                 <p className="text-[30px]">
                   <strong>Подберем проверенного тренера</strong> на базе вашего
                   запроса
                 </p>
-                <img src={features1} alt="icon" className="w-[160px]" />
+                <img src={features1} alt="icon" className="w-[80px]" />
               </div>
-              <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
+              <div className="flex justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform hover:translate-y-[-10px] hover:opacity-40">
                 <p className="text-purple-600 text-[30px]">
                   <strong>Гибкое расписание.</strong> Наши тренера работают в
                   онлайн режиме 24/7
                 </p>
-                <img src={features2} alt="icon" className="w-[160px]" />
+                <img src={features2} alt="icon" className="w-[80px]" />
               </div>
-              <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
+              <div className="flex justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform hover:translate-y-[-10px] hover:opacity-40">
                 <p className="text-[30px]">
                   <strong>Высокая вовлеченность тренера</strong> и контроль
                   техники.
                 </p>
-                <img src={features3} alt="icon" className="w-[160px]" />
+                <img src={features3} alt="icon" className="w-[80px]" />
               </div>
-              <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
+              <div className="flex justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform hover:translate-y-[-10px] hover:opacity-40">
                 <p className="text-purple-600 text-[30px]">
                   <strong>Наши тренера дадут максимальную поддержку</strong> и
                   заботу о вас
                 </p>
-                <img src={features4} alt="icon" className="w-[160px]" />
+                <img src={features4} alt="icon" className="w-[80px]" />
               </div>
-              <div className="flex justify-between items-center p-4 rounded-[60px] py-2 px-5 bg-white border-1 border-[#e4e4e4]">
+              <div className="flex justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform hover:translate-y-[-10px] hover:opacity-40">
                 <p className="text-[30px]">
                   <strong>Мы подготовим персональную программу</strong> под ваши
                   особенности и предпочтения
                 </p>
-                <img src={features5} alt="icon" className="w-[160px]" />
+                <img src={features5} alt="icon" className="w-[80px]" />
               </div>
             </div>
           </section>
