@@ -28,14 +28,14 @@ const settings = {
 const App = () => {
   return (
     <div className="max-w-[1700px] mx-auto">
-      <main className="w-full bg-none md:bg-[url('./assets/main-bg.png')] md:bg-contain md:bg-no-repeat md:bg-[right_70px] 2xl:bg-[url('./assets/main-bg-full.png')] 2xl:bg-[length:800px] pb-[100px]">
+      <main className="w-full bg-none lg:bg-[url('./assets/main-bg.png')] md:bg-contain md:bg-no-repeat md:bg-[right_70px_-40px] 2xl:bg-[url('./assets/main-bg-full.png')] 2xl:bg-[length:800px] lg:bg-[right_-30px] 2xl:bg-[right_30px] pb-[150px] xl:pb-[170px] 2xl:pb-[177px]">
         <div className="main-layout">
           <header className="w-full">
             <div className="container max-w-[90%] mx-auto my-[50px]">
               <img src={Logo} alt="FitMentor Logo" className="w-60 mb-4" />
             </div>
           </header>
-          <div className="container max-w-[90%] mx-auto">
+          <div className="container max-w-[90%] mx-auto mt-20">
             <div className="main-content w-full flex">
               <div className="xl:max-w-[630px] lg:max-w-[500px] md:max-w-[370px] max-w-full">
                 <h1 className="text-[45px] lg:text-[60px] xl:text-[75px] font-medium text-gray-900 mb-6 leading-13 lg:leading-19">
@@ -46,7 +46,7 @@ const App = () => {
                   онлайн-тренировки: чаты с тренером, живые видео и приложение
                   для ваших целей.
                 </p>
-                <button className="cursor-pointer transform lg:translate-x-[120px] mt-0 px-15 py-6 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 font-[500] text-[26px] lg:text-[35px]">
+                <button className="cursor-pointer transform lg:translate-x-[120px] mt-0 px-15 py-6 bg-gradient-to-r from-[#6F3DDE] to-[#9261FF] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[26px] lg:text-[35px] bg-clip-border">
                   Записаться
                 </button>
               </div>
@@ -56,7 +56,7 @@ const App = () => {
       </main>
       <div className="min-h-screen flex flex-col items-center main-layout">
         <div className="container max-w-[90%] mx-auto">
-          <section className="py-10 mt-10 lg:mt-10 bg-white rounded-[50px] w-[70%] mx-auto">
+          <section className="py-10 mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-[70%] mx-auto">
             <div className="flex flex-col lg:flex-row items-center justify-center">
               <img src={rubbleIcon} className="w-20 mr-5" alt="" />
               <h2 className="text-xl font-bold flex flex-col text-center">
