@@ -30,7 +30,7 @@ const CustomPrevArrow = ({ className, onClick }: CustomArrowProps) => (
   <img
     src={leftArrow}
     alt="prev"
-    className={`${className} !w-[40px] !h-[40px] lg:!w-[80px] lg:!h-[80px] !z-10 transform translate-x-[-4px] lg:hover:opacity-60 transition-all`}
+    className={`${className} !w-[40px] !h-[40px] lg:!w-[80px] lg:!h-[80px] !z-10 transform translate-x-[0] sm:translate-x-[-4px] lg:hover:opacity-60 transition-all`}
     onClick={onClick}
   />
 );
@@ -39,7 +39,7 @@ const CustomNextArrow = ({ className, onClick }: CustomArrowProps) => (
   <img
     src={rightArrow}
     alt="next"
-    className={`${className} !w-[40px] !h-[40px] lg:!w-[80px] lg:!h-[80px] !z-10 transform translate-x-[4px] lg:hover:opacity-60 transition-all`}
+    className={`${className} !w-[40px] !h-[40px] lg:!w-[80px] lg:!h-[80px] !z-10 transform translate-x-[0] sm:translate-x-[4px] lg:hover:opacity-60 transition-all`}
     onClick={onClick}
   />
 );
@@ -67,11 +67,11 @@ const App = () => {
         </div>
         <div className="main-layout">
           <header className="w-full">
-            <div className="container max-w-[90%] mx-auto my-[30px] lg:my-[50px]">
+            <div className="container max-w-[95%] lg:max-w-[90%] mx-auto my-[30px] lg:my-[50px]">
               <img src={Logo} alt="FitMentor Logo" className="w-60 mb-4" />
             </div>
           </header>
-          <div className="container max-w-[90%] mx-auto mt-10 lg:mt-20">
+          <div className="container max-w-[95%] lg:max-w-[90%] mx-auto mt-10 lg:mt-20">
             <div className="main-content w-full flex">
               <div className="xl:max-w-[605px] md:max-w-[490px] max-w-full">
                 <h1 className="text-[39px] sm:text-[43px] md:text-[60px] xl:text-[74px] font-medium text-gray-900 mb-6 leading-13 md:leading-19">
@@ -94,16 +94,16 @@ const App = () => {
         </div>
       </main>
       <div className="min-h-screen flex flex-col items-center main-layout">
-        <div className="container max-w-[90%] mx-auto">
-          <section className="py-5 lg:py-10 lg:mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-[95%] mx-auto pb-10">
-            <div className="flex flex-col lg:flex-row items-center justify-center">
-              <img src={rubbleIcon} className="w-15 lg:w-20 mr-5" alt="" />
+        <div className="container max-w-[95%] lg:max-w-[90%] mx-auto">
+          <section className="py-7 px-4 lg:py-10 lg:mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-full lg:w-[95%] mx-auto">
+            <div className="flex flex-row lg:flex-row items-center justify-center">
+              <img src={rubbleIcon} className="w-12 lg:w-20 mr-5" alt="" />
               <h2 className="text-xl font-bold flex flex-col text-center">
-                <span className="text-[17px] lg:text-[25px]">
+                <span className="text-[15px] sm:text-[17px] lg:text-[25px]">
                   {" "}
                   Месяц тренировок с тренером{" "}
                 </span>
-                <span className="text-gray-900  text-[35px] lg:text-[50px] leading-10">
+                <span className="text-gray-900 text-[30px] sm:text-[35px] lg:text-[50px] leading-10">
                   по цене одной!
                 </span>
               </h2>
@@ -240,7 +240,7 @@ const App = () => {
               alt="threeHundred"
               className="mx-auto max-w-[900px] w-full"
             />
-            <h2 className="text-2xl lg:text-xl font-[500] text-gray-900 my-6">
+            <h2 className="text-xl lg:text-3xl font-[500] text-gray-900 my-6">
               Мы обладаем всеми возможными знаниями, которые идеально подойдут
               именно вам!
             </h2>
@@ -254,7 +254,7 @@ const App = () => {
             >
               Получить
             </button>
-            <p className="text-[#5a5a5a] my-6 text-xl">
+            <p className="text-[#5a5a5a] my-6 text-xl lg:text-2xl">
               Бесплатную персональную программу тренировок
             </p>
           </section>
