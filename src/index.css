@@ -19,6 +19,30 @@ body {
   margin: 0 auto;
 }
 
+.main-form-plaque {
+  background-image: url("./assets/plaque-background.jpg");
+  background-size: cover;
+  position: relative;
+  background-position-y: bottom;
+  overflow: hidden;
+}
+.main-form-plaque > * {
+  position: relative;
+  z-index: 15;
+}
+
+.main-form-plaque:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #4f46e5, #9333ea);
+  opacity: 0.8;
+  z-index: 5;
+}
+
 .montserrat-regular,
 p {
   font-family: "Montserrat", sans-serif;

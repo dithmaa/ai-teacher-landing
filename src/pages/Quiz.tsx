@@ -1,11 +1,9 @@
 import { useState } from "react";
 import blurImage from "../assets/blur-img.jpg";
-import { trainersData } from "../shared/constants/dummy-data";
 
 const Quiz = () => {
   const [step, setStep] = useState(1);
   const [contact, setContact] = useState("");
-  const [selectedTrainer, setSelectedTrainer] = useState("");
   const [isError, setIsError] = useState(false);
 
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +16,8 @@ const Quiz = () => {
     }
   };
 
-  const handleContactSubmit = () => {
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     if (contact.length >= 6) {
       setIsError(false); // Сброс ошибки
       setStep(3);
@@ -27,13 +26,8 @@ const Quiz = () => {
     }
   };
 
-  const handleTrainerSelect = (trainer: string) => {
-    setSelectedTrainer(trainer);
-    setStep(5);
-  };
-
   const handlePayment = () => {
-    setStep(6);
+    setStep(4);
   };
 
   return (
@@ -42,12 +36,7 @@ const Quiz = () => {
         <form action="#">
           {/* Рекламный баннер */}
           {step === 1 && (
-            <div
-              style={{
-                background: "linear-gradient(to right, #4f46e5, #9333ea)",
-              }}
-              className="text-white py-6 px-8 rounded-xl shadow-lg text-center my-[20px]"
-            >
+            <div className="text-white py-17 px-8 rounded-xl shadow-lg text-center my-[20px] main-form-plaque">
               <h2 className="text-lg lg:text-2xl font-extrabold">
                 Болит спина? Ответьте на 5 вопросов и получите идеальную
                 программу тренировок.
@@ -85,7 +74,7 @@ const Quiz = () => {
                 <img
                   src={blurImage}
                   alt="Мини-апп"
-                  className="w-full h-full object-cover blur-[2px]"
+                  className="w-full h-full object-cover blur-[6px]"
                 />
               </div>
               <p className="text-sm lg:text-lg text-[#838383]">
@@ -116,97 +105,11 @@ const Quiz = () => {
             </div>
           )}
 
-          {/* Шаг 3 - Ускорение с тренером */}
+          {/* Шаг 3 - Выбор тарифа */}
           {step === 3 && (
             <div className="text-center space-y-6">
-              <h2 className="text-xl font-semibold text-[#838383]">
-                Тренировки с тренером ускоряют избавление от симптомов на 35%.
-              </h2>
-              <button
-                onClick={() => setStep(4)}
-                style={{
-                  background: "linear-gradient(to right, #34d399, #10b981)",
-                }}
-                className="text-white py-3 px-6 rounded-full shadow-md transform transition-all duration-300 cursor-pointer active:opacity-50"
-              >
-                Подобрать тренера на основе анкеты
-              </button>
-            </div>
-          )}
-
-          {/* Шаг 4 - Анкеты тренеров */}
-          {step === 4 && (
-            <>
-              <h2 className="text-2xl font-semibold text-[#838383] text-center mb-6">
-                Выберите тренера
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {trainersData.map((trainer) => (
-                  <div
-                    key={trainer.name}
-                    className="bg-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-300"
-                  >
-                    <div className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-[#363636]">
-                        {trainer.name}
-                      </h3>
-                      <img
-                        src={trainer.image}
-                        className="w-[132px] h-[202px] object-cover mx-auto rounded-lg"
-                        alt={trainer.name}
-                      />
-                      <h4 className="text-sm my-4 font-semibold text-[#363636]">
-                        Анкета тренера
-                      </h4>
-                      <ul>
-                        <li className="text-[#111]">
-                          <strong>Опыт:</strong>{" "}
-                          <span className="text-[#333]">
-                            {trainer.anketa.experience}
-                          </span>
-                        </li>
-                        <li className="text-[#111]">
-                          <strong>Пол:</strong>{" "}
-                          <span className="text-[#333]">
-                            {" "}
-                            {trainer.anketa.sex}
-                          </span>
-                        </li>
-                        <li className="text-[#111]">
-                          <strong>Место жительства:</strong>{" "}
-                          <span className="text-[#333]">
-                            {trainer.anketa.location}
-                          </span>
-                        </li>
-                        <li className="text-[#111]">
-                          <strong>Количество студентов за все время:</strong>{" "}
-                          <span className="text-[#333]">
-                            {trainer.anketa.students}
-                          </span>
-                        </li>
-                      </ul>
-                      <button
-                        onClick={() => handleTrainerSelect(trainer.name)}
-                        style={{
-                          background:
-                            "linear-gradient(to right, #4f46e5, #9333ea)",
-                        }}
-                        className="text-white py-2 px-4 rounded-full mt-0 transform transition-all duration-300 cursor-pointer active:opacity-50"
-                      >
-                        Выбрать
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
-
-          {/* Шаг 5 - Выбор тарифа */}
-          {step === 5 && selectedTrainer && (
-            <div className="text-center space-y-6">
               <h2 className="text-2xl font-semibold text-[#838383]">
-                Выберите тариф для тренировки с {selectedTrainer}
+                Выберите тариф
               </h2>
               <div className="space-y-4">
                 <button
@@ -240,8 +143,8 @@ const Quiz = () => {
             </div>
           )}
 
-          {/* Шаг 6 - Экран оплаты */}
-          {step === 6 && (
+          {/* Шаг 4 - Экран оплаты */}
+          {step === 4 && (
             <div className="text-center space-y-6">
               <h2 className="text-2xl font-semibold text-[#838383]">
                 Переходите к оплате через Юмани
