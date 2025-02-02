@@ -1,10 +1,18 @@
 import { useState } from "react";
+import Logo from "../assets/logo.png";
+
 import blurImage from "../assets/blur-img.jpg";
 
 const Quiz = () => {
   const [step, setStep] = useState(1);
   const [contact, setContact] = useState("");
   const [isError, setIsError] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+
+  const firstStepFunc = () => {
+    setStep(2);
+    setIsHeaderVisible(false);
+  };
 
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -31,7 +39,12 @@ const Quiz = () => {
   };
 
   return (
-    <div className="App max-w-[1280px] mx-auto px-6 py-8 flex justify-center items-center min-h-screen">
+    <div className="App max-w-[1280px] mx-auto px-6 py-8 flex flex-col justify-center items-center min-h-screen">
+      {isHeaderVisible && (
+        <header className="mt-[-50px] mb-[50px] lg:mt-[-100px] lg:mb-[100px]">
+          <img src={Logo} width={200} alt="FitMentor Logo" />
+        </header>
+      )}
       <main className="space-y-8 w-full max-w-2xl">
         <form action="#">
           {/* Рекламный баннер */}
@@ -52,7 +65,7 @@ const Quiz = () => {
               </h2>
               <div className="mt-4">
                 <button
-                  onClick={() => setStep(2)}
+                  onClick={firstStepFunc}
                   className="text-white py-3 px-6 rounded-full shadow-md transform transition-all duration-300 cursor-pointer active:opacity-50"
                   style={{
                     background: "linear-gradient(to right, #4f46e5, #9333ea)",

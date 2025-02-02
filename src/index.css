@@ -81,3 +81,9 @@ p {
 .gradient-button:hover {
   opacity: 0.9;
 }
+
+@media screen and (max-width: 400px) {
+  .white-plaque div {
+    flex-direction: column !important;
+  }
+}
