@@ -74,7 +74,7 @@ const App = () => {
           <div className="container max-w-[90%] mx-auto mt-10 lg:mt-20">
             <div className="main-content w-full flex">
               <div className="xl:max-w-[605px] md:max-w-[490px] max-w-full">
-                <h1 className="text-[45px] md:text-[60px] xl:text-[74px] font-medium text-gray-900 mb-6 leading-13 md:leading-19">
+                <h1 className="text-[43px] md:text-[60px] xl:text-[74px] font-medium text-gray-900 mb-6 leading-13 md:leading-19">
                   Приведи себя <br /> в лучшую форму своей жизни!
                 </h1>
                 <p className="text-[#000] mt-2 text-[18px] lg:text-[19px] xl:text-[23px] my-3 font-[400]">
@@ -84,7 +84,7 @@ const App = () => {
                 </p>
                 <button
                   onClick={apply}
-                  className="cursor-pointer transform lg:translate-x-[120px] mt-3 lg:mt-5 px-10 lg:px-15 py-4 lg:py-6 bg-gradient-to-r from-[#6F3DDE] to-[#9261FF] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[26px] lg:text-[35px] bg-clip-border"
+                  className="cursor-pointer transform lg:translate-x-[120px] mt-3 lg:mt-5 px-10 lg:px-15 py-4 lg:py-6 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[26px] lg:text-[35px] bg-clip-border gradient-button"
                 >
                   Записаться
                 </button>
@@ -150,42 +150,62 @@ const App = () => {
             </div>
           </section>
 
-          <section className="mt-8 w-fullp-6">
+          <section className="mt-8 w-full">
             <div className="flex flex-col gap-10 lg:gap-4 items-center">
-              <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform hover:translate-y-[-10px] hover:opacity-40 w-full md:w-[48%] lg:w-full">
+              <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform lg:hover:translate-y-[-10px] lg:hover:opacity-40 w-full md:w-[48%] sm:w-[70%] lg:w-full text-center lg:text-left">
                 <p className="text-[20px] lg:text-[30px]">
                   <strong>Подберем проверенного тренера</strong> на базе вашего
                   запроса
                 </p>
-                <img src={features1} alt="icon" className="w-[80px]" />
+                <img
+                  src={features1}
+                  alt="icon"
+                  className="w-[80px] lg:mb-0 mb-5"
+                />
               </div>
-              <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform hover:translate-y-[-10px] hover:opacity-40 w-full md:w-[48%] lg:w-full">
+              <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform lg:hover:translate-y-[-10px] lg:hover:opacity-40 w-full md:w-[48%] sm:w-[70%] lg:w-full text-center lg:text-left">
                 <p className="text-purple-600 text-[20px] lg:text-[30px]">
                   <strong>Гибкое расписание.</strong> Наши тренера работают в
                   онлайн режиме 24/7
                 </p>
-                <img src={features2} alt="icon" className="w-[80px]" />
+                <img
+                  src={features2}
+                  alt="icon"
+                  className="w-[80px] lg:mb-0 mb-5"
+                />
               </div>
-              <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform hover:translate-y-[-10px] hover:opacity-40 w-full md:w-[48%] lg:w-full">
+              <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform lg:hover:translate-y-[-10px] lg:hover:opacity-40 w-full md:w-[48%] sm:w-[70%] lg:w-full text-center lg:text-left">
                 <p className="text-[20px] lg:text-[30px]">
                   <strong>Высокая вовлеченность тренера</strong> и контроль
                   техники.
                 </p>
-                <img src={features3} alt="icon" className="w-[80px]" />
+                <img
+                  src={features3}
+                  alt="icon"
+                  className="w-[80px] lg:mb-0 mb-5"
+                />
               </div>
-              <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform hover:translate-y-[-10px] hover:opacity-40 w-full md:w-[48%] lg:w-full">
+              <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform lg:hover:translate-y-[-10px] lg:hover:opacity-40 w-full md:w-[48%] sm:w-[70%] lg:w-full text-center lg:text-left">
                 <p className="text-purple-600 text-[20px] lg:text-[30px]">
                   <strong>Наши тренера дадут максимальную поддержку</strong> и
                   заботу о вас
                 </p>
-                <img src={features4} alt="icon" className="w-[80px]" />
+                <img
+                  src={features4}
+                  alt="icon"
+                  className="w-[80px] lg:mb-0 mb-5"
+                />
               </div>
-              <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform hover:translate-y-[-10px] hover:opacity-40 w-full md:w-[48%] lg:w-full">
+              <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform lg:hover:translate-y-[-10px] lg:hover:opacity-40 w-full md:w-[48%] sm:w-[70%] lg:w-full text-center lg:text-left">
                 <p className="text-[20px] lg:text-[30px]">
                   <strong>Мы подготовим персональную программу</strong> под ваши
                   особенности и предпочтения
                 </p>
-                <img src={features5} alt="icon" className="w-[80px]" />
+                <img
+                  src={features5}
+                  alt="icon"
+                  className="w-[80px] lg:mb-0 mb-5"
+                />
               </div>
             </div>
           </section>
@@ -229,7 +249,7 @@ const App = () => {
               медицинских проблем.
             </p>
             <button
-              className="cursor-pointer mt-10 mb-3 px-10 lg:px-15 lg:py-6 py-4 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 font-[500] text-[26px] lg:text-[35px]"
+              className="gradient-button cursor-pointer transform mt-3 lg:mt-5 px-10 lg:px-15 py-4 lg:py-6 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[26px] lg:text-[35px] bg-clip-border"
               onClick={apply}
             >
               Получить

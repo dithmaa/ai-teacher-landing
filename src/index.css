@@ -57,3 +57,27 @@ p {
   font-weight: 700; /* Жирный */
   font-style: normal;
 }
+
+.gradient-button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 26px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  background: -webkit-linear-gradient(
+    left,
+    #6f3dde,
+    #9261ff
+  ); /* Префикс для WebKit */
+  background: linear-gradient(to right, #6f3dde, #9261ff);
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  -webkit-background-clip: border-box; /* Префикс для iOS и WebKit */
+  background-clip: border-box;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-button:hover {
+  opacity: 0.9;
+}
