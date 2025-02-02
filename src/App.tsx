@@ -17,6 +17,7 @@ import rubbleIcon from "./assets/rubble.png";
 import leftArrow from "./assets/left-arrow.png";
 import rightArrow from "./assets/right-arrow.png";
 import triangle from "./assets/triangle.png";
+import rightTriangle from "./assets/right-triangle.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -61,8 +62,8 @@ const apply = () => {
 const App = () => {
   return (
     <div className="max-w-[1700px] mx-auto">
-      <main className="w-full bg-none lg:bg-[url('./assets/main-bg.png')] md:bg-contain md:bg-no-repeat md:bg-[right_70px_-40px] 2xl:bg-[url('./assets/main-bg-full.png')] 2xl:bg-[length:800px] lg:bg-[right_-30px] 2xl:bg-[right_30px] pb-[60px] lg:pb-[150px] xl:pb-[170px] 2xl:pb-[177px]">
-        <div className="triangle hidden lg:block absolute bottom-[-80px] left-0">
+      <main className="w-full bg-none lg:bg-[url('./assets/main-bg.png')] md:bg-contain md:bg-no-repeat md:bg-[right_70px_-40px] 2xl:bg-[url('./assets/main-bg-full.png')] 2xl:bg-[length:800px] lg:bg-[right_-30px] 2xl:bg-[right_30px] pb-[60px] lg:pb-[150px] xl:pb-[170px] 2xl:pb-[177px] relative">
+        <div className="triangle hidden lg:block absolute bottom-[-80px] left-0 z-10">
           <img src={triangle} className="w-[140px]" alt="triangle" />
         </div>
         <div className="main-layout">
@@ -95,7 +96,7 @@ const App = () => {
       </main>
       <div className="min-h-screen flex flex-col items-center main-layout">
         <div className="container max-w-[95%] lg:max-w-[90%] mx-auto">
-          <section className="py-7 px-4 lg:py-10 lg:mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-full lg:w-[95%] mx-auto">
+          <section className="py-7 px-4 lg:py-10 lg:mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-full lg:w-[95%] mx-auto relative">
             <div className="flex flex-row lg:flex-row items-center justify-center">
               <img src={rubbleIcon} className="w-12 lg:w-20 mr-5" alt="" />
               <h2 className="text-xl font-bold flex flex-col text-center">
@@ -150,7 +151,7 @@ const App = () => {
             </div>
           </section>
 
-          <section className="mt-8 w-full">
+          <section className="mt-8 w-full relative">
             <div className="flex flex-col gap-10 lg:gap-4 items-center">
               <div className="flex lg:flex-row flex-col-reverse justify-between items-center p-4 rounded-[30px] py-5 px-10 bg-white border-1 border-[#e4e4e4] transition-all transform lg:hover:translate-y-[-10px] lg:hover:opacity-40 w-full md:w-[48%] sm:w-[70%] lg:w-full text-center lg:text-left">
                 <p className="text-[20px] lg:text-[30px]">
