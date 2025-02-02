@@ -17,7 +17,6 @@ import rubbleIcon from "./assets/rubble.png";
 import leftArrow from "./assets/left-arrow.png";
 import rightArrow from "./assets/right-arrow.png";
 import triangle from "./assets/triangle.png";
-import rightTriangle from "./assets/right-triangle.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
