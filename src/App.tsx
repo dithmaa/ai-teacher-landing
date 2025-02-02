@@ -16,6 +16,7 @@ import rubbleIcon from "./assets/rubble.png";
 
 import leftArrow from "./assets/left-arrow.png";
 import rightArrow from "./assets/right-arrow.png";
+import triangle from "./assets/triangle.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -61,6 +62,9 @@ const App = () => {
   return (
     <div className="max-w-[1700px] mx-auto">
       <main className="w-full bg-none lg:bg-[url('./assets/main-bg.png')] md:bg-contain md:bg-no-repeat md:bg-[right_70px_-40px] 2xl:bg-[url('./assets/main-bg-full.png')] 2xl:bg-[length:800px] lg:bg-[right_-30px] 2xl:bg-[right_30px] pb-[60px] lg:pb-[150px] xl:pb-[170px] 2xl:pb-[177px]">
+        <div className="triangle hidden lg:block absolute bottom-[-80px] left-0">
+          <img src={triangle} className="w-[140px]" alt="triangle" />
+        </div>
         <div className="main-layout">
           <header className="w-full">
             <div className="container max-w-[90%] mx-auto my-[30px] lg:my-[50px]">
@@ -69,8 +73,8 @@ const App = () => {
           </header>
           <div className="container max-w-[90%] mx-auto mt-10 lg:mt-20">
             <div className="main-content w-full flex">
-              <div className="xl:max-w-[605px] lg:max-w-[490px] md:max-w-[370px] max-w-full">
-                <h1 className="text-[45px] lg:text-[60px] xl:text-[74px] font-medium text-gray-900 mb-6 leading-13 lg:leading-19">
+              <div className="xl:max-w-[605px] md:max-w-[490px] max-w-full">
+                <h1 className="text-[45px] md:text-[60px] xl:text-[74px] font-medium text-gray-900 mb-6 leading-13 md:leading-19">
                   Приведи себя <br /> в лучшую форму своей жизни!
                 </h1>
                 <p className="text-[#000] mt-2 text-[18px] lg:text-[19px] xl:text-[23px] my-3 font-[400]">
