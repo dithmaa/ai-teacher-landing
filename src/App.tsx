@@ -96,7 +96,7 @@ const App = () => {
       </main>
       <div className="min-h-screen flex flex-col items-center main-layout">
         <div className="container max-w-[95%] lg:max-w-[90%] mx-auto">
-          <section className="py-7 px-4 lg:py-10 lg:mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-full lg:w-[95%] mx-auto relative">
+          <section className="py-7 px-4 lg:py-10 lg:mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-full lg:w-[95%] mx-auto relative mt-[-25px]">
             <div className="flex flex-row lg:flex-row items-center justify-center">
               <img src={rubbleIcon} className="w-12 lg:w-20 mr-5" alt="" />
               <h2 className="text-xl font-bold flex flex-col text-center">
