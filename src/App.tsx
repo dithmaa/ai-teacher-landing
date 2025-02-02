@@ -74,7 +74,7 @@ const App = () => {
           <div className="container max-w-[90%] mx-auto mt-10 lg:mt-20">
             <div className="main-content w-full flex">
               <div className="xl:max-w-[605px] md:max-w-[490px] max-w-full">
-                <h1 className="text-[43px] md:text-[60px] xl:text-[74px] font-medium text-gray-900 mb-6 leading-13 md:leading-19">
+                <h1 className="text-[39px] sm:text-[43px] md:text-[60px] xl:text-[74px] font-medium text-gray-900 mb-6 leading-13 md:leading-19">
                   Приведи себя <br /> в лучшую форму своей жизни!
                 </h1>
                 <p className="text-[#000] mt-2 text-[18px] lg:text-[19px] xl:text-[23px] my-3 font-[400]">
@@ -234,17 +234,17 @@ const App = () => {
             </div>
           </section>
 
-          <section className="mt-8 w-full p-6 text-center">
+          <section className="mt-8 w-full lg:p-6 text-center">
             <img
               src={threeHundred}
               alt="threeHundred"
               className="mx-auto max-w-[900px] w-full"
             />
-            <h2 className="text-2xl lg:text-3xl font-[500] text-gray-900 my-6">
+            <h2 className="text-2xl lg:text-xl font-[500] text-gray-900 my-6">
               Мы обладаем всеми возможными знаниями, которые идеально подойдут
               именно вам!
             </h2>
-            <p className="text-gray-700 mt-2  text-2xl lg:text-3xl">
+            <p className="text-gray-700 mt-2 text-xl lg:text-3xl">
               От бодибилдинга до послеродового периода, гормональных и
               медицинских проблем.
             </p>
@@ -254,7 +254,7 @@ const App = () => {
             >
               Получить
             </button>
-            <p className="text-gray-500 my-6 text-2xl">
+            <p className="text-[#5a5a5a] my-6 text-xl">
               Бесплатную персональную программу тренировок
             </p>
           </section>
