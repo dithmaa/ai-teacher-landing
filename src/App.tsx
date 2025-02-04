@@ -13,10 +13,14 @@ import step3 from "./assets/steps/3.png";
 import step4 from "./assets/steps/4.png";
 import footerBg from "./assets/footer-bg.png";
 import rubbleIcon from "./assets/rubble.png";
+import appScreens from "./assets/app-screens.png";
 
 import leftArrow from "./assets/left-arrow.png";
 import rightArrow from "./assets/right-arrow.png";
 import triangle from "./assets/triangle.png";
+import trainer1 from "./assets/trainer1.png";
+import trainer2 from "./assets/trainer2.png";
+import trainer3 from "./assets/trainer3.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -62,8 +66,12 @@ const App = () => {
   return (
     <div className="max-w-[1700px] mx-auto">
       <main className="w-full bg-none lg:bg-[url('./assets/main-bg.png')] md:bg-contain md:bg-no-repeat md:bg-[right_70px_-40px] 2xl:bg-[url('./assets/main-bg-full.png')] 2xl:bg-[length:800px] lg:bg-[right_-30px] 2xl:bg-[right_30px] pb-[60px] lg:pb-[150px] xl:pb-[170px] 2xl:pb-[177px] relative">
-        <div className="triangle hidden lg:block absolute bottom-[-80px] left-0 z-10">
-          <img src={triangle} className="w-[140px]" alt="triangle" />
+        <div className="triangle hidden lg:block absolute bottom-[-60px] left-0 z-10">
+          <img
+            src={triangle}
+            className="w-[220px] 2xl:w-[250px]"
+            alt="triangle"
+          />
         </div>
         <div className="main-layout">
           <header className="w-full">
@@ -95,7 +103,7 @@ const App = () => {
       </main>
       <div className="min-h-screen flex flex-col items-center main-layout">
         <div className="container max-w-[95%] lg:max-w-[90%] mx-auto">
-          <section className="py-7 px-4 lg:py-10 lg:mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-full lg:w-[95%] mx-auto relative mt-[-25px] white-plaque">
+          <section className="py-7 px-4 lg:py-10 lg:mt-[-120px] 2xl:mt-[-50px] bg-white rounded-[50px] w-full lg:w-[95%] mx-auto relative mt-[-25px] white-plaque border-4 border-[#e6e6e6]">
             <div className="flex flex-row lg:flex-row items-center justify-center">
               <img src={rubbleIcon} className="w-12 lg:w-20 mr-5" alt="" />
               <h2 className="text-xl font-bold flex flex-col text-center">
@@ -119,14 +127,14 @@ const App = () => {
               <div className="flex items-center flex-col bg-white rounded-[20px] lg:rounded-[40px] xl:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-full sm:w-[70%] md:w-[48%] lg:w-[23%] xl:w-[23%]">
                 <div className="flex items-center transform translate-y-[-45%]">
                   <span className="text-[40px] lg:text-[45px] mr-[5px]">1</span>
-                  <img src={step1} alt="" />
+                  <img src={step1} alt="" className="w-[70px]" />
                 </div>
                 <p>Пройдите тест и подберите идеального тренера</p>
               </div>
               <div className="flex items-center flex-col bg-white rounded-[20px] lg:rounded-[40px] xl:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-full sm:w-[70%] md:w-[48%] lg:w-[23%] xl:w-[23%]">
                 <div className="flex items-center transform translate-y-[-45%]">
                   <span className="text-[40px] lg:text-[45px] mr-[5px]">2</span>
-                  <img src={step2} alt="" />
+                  <img src={step2} alt="" className="w-[70px]" />
                 </div>
                 <p>
                   Видеозвонок для согласования индивидуального плана упражнений
@@ -136,14 +144,14 @@ const App = () => {
               <div className="flex items-center flex-col bg-white rounded-[20px] lg:rounded-[40px] xl:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-full sm:w-[70%] md:w-[48%] lg:w-[23%] xl:w-[23%]">
                 <div className="flex items-center transform translate-y-[-45%]">
                   <span className="text-[40px] lg:text-[45px] mr-[5px]">3</span>
-                  <img src={step3} alt="" />
+                  <img src={step3} alt="" className="w-[70px]" />
                 </div>
                 <p>Выполняйте тренировки, разработанные специально для вас</p>
               </div>
               <div className="flex items-center flex-col bg-white rounded-[20px] lg:rounded-[40px] xl:rounded-[30%] border-2 border-[#e4e4e4] px-7 pb-10 text-center w-full sm:w-[70%] md:w-[48%] lg:w-[23%] xl:w-[23%]">
                 <div className="flex items-center transform translate-y-[-45%]">
                   <span className="text-[40px] lg:text-[45px] mr-[5px]">4</span>
-                  <img src={step4} alt="" />
+                  <img src={step4} alt="" className="w-[70px]" />
                 </div>
                 <p>Будьте очень мотивированы в время еженедельных проверок</p>
               </div>
@@ -208,6 +216,52 @@ const App = () => {
                 />
               </div>
             </div>
+          </section>
+
+          <section className="trainers">
+            <h2 className="text-[30px] lg:text-[50px] font-semibold text-[#353532] mt-6 text-center leading-9 lg:leading-16 mb-5">
+              Подобрали тренеров для вас!
+              <div className="trainers-list flex lg:flex-row flex-col justify-between xl:gap-10 gap-8 mt-14">
+                <div className="trainer-item pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
+                  <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
+                    Тренер Богдан
+                  </h5>
+                  <img
+                    src={trainer1}
+                    alt=""
+                    className="h-[284px] mx-auto object-cover"
+                  />
+                </div>
+                <div className="trainer-item pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
+                  <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
+                    Шохина Мария
+                  </h5>
+                  <img
+                    src={trainer2}
+                    alt=""
+                    className="h-[284px] mx-auto object-cover"
+                  />
+                </div>
+                <div className="trainer-item pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
+                  <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
+                    Шиндин Никита
+                  </h5>
+                  <img
+                    src={trainer3}
+                    alt=""
+                    className="h-[284px] mx-auto object-cover"
+                  />
+                </div>
+              </div>
+            </h2>
+          </section>
+
+          <section className="app-screens">
+            <img
+              src={appScreens}
+              className="max-w-[650px] w-full mx-auto my-[50px]"
+              alt="screens"
+            />
           </section>
 
           <section className="mt-8 w-full">

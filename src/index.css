@@ -82,6 +82,24 @@ p {
   opacity: 0.9;
 }
 
+.trainer-item {
+  position: relative;
+}
+.trainer-item::after {
+  content: "";
+  position: absolute;
+  top: -28px;
+  width: 45px;
+  height: 55px;
+  background: url("./assets/spark.png");
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 400px) {
   .white-plaque div {
     flex-direction: column !important;
