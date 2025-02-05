@@ -222,7 +222,7 @@ const App = () => {
             <h2 className="text-[30px] lg:text-[50px] font-semibold text-[#353532] mt-6 text-center leading-9 lg:leading-16 mb-5">
               Подобрали тренеров для вас!
               <div className="trainers-list flex lg:flex-row flex-col justify-between xl:gap-10 gap-8 mt-14">
-                <div className="trainer-item pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
+                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
                   <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
                     Тренер Богдан
                   </h5>
@@ -231,8 +231,14 @@ const App = () => {
                     alt=""
                     className="h-[284px] mx-auto object-cover"
                   />
+                  <button
+                    onClick={apply}
+                    className="cursor-pointer transform absolute left-[50%] translate-x-[-50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-2 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
+                  >
+                    Записаться
+                  </button>
                 </div>
-                <div className="trainer-item pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
+                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
                   <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
                     Шохина Мария
                   </h5>
@@ -241,8 +247,14 @@ const App = () => {
                     alt=""
                     className="h-[284px] mx-auto object-cover"
                   />
+                  <button
+                    onClick={apply}
+                    className="cursor-pointer transform absolute left-[50%] translate-x-[-50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-2 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
+                  >
+                    Записаться
+                  </button>
                 </div>
-                <div className="trainer-item pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
+                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
                   <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
                     Шиндин Никита
                   </h5>
@@ -251,6 +263,12 @@ const App = () => {
                     alt=""
                     className="h-[284px] mx-auto object-cover"
                   />
+                  <button
+                    onClick={apply}
+                    className="cursor-pointer transform absolute left-[50%] translate-x-[-50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-2 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
+                  >
+                    Записаться
+                  </button>
                 </div>
               </div>
             </h2>
