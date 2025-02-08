@@ -14,10 +14,6 @@ const Quiz = () => {
   const [fitnessChallenge, setFitnessChallenge] = useState<string>("");
   const [fitnessExperience, setFitnessExperience] = useState<string>("");
 
-  const handleButtonClick = (e: React.FormEvent) => {
-    e.preventDefault(); // Предотвращаем обновление формы
-  };
-
   const firstStepFunc = () => {
     setStep(2);
     setIsHeaderVisible(false);
