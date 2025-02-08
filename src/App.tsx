@@ -221,8 +221,8 @@ const App = () => {
           <section className="trainers">
             <h2 className="text-[30px] lg:text-[50px] font-semibold text-[#353532] mt-6 text-center leading-9 lg:leading-16 mb-5">
               Подобрали тренеров для вас!
-              <div className="trainers-list flex lg:flex-row flex-col justify-between xl:gap-10 gap-8 mt-14">
-                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
+              <div className="trainers-list flex lg:flex-row flex-col items-center justify-between xl:gap-10 gap-20 mt-14">
+                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full md:w-1/2 lg:w-full flex flex-col justify-end">
                   <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
                     Тренер Богдан
                   </h5>
@@ -238,7 +238,7 @@ const App = () => {
                     Записаться
                   </button>
                 </div>
-                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
+                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full md:w-1/2 lg:w-full flex flex-col justify-end">
                   <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
                     Шохина Мария
                   </h5>
@@ -254,7 +254,7 @@ const App = () => {
                     Записаться
                   </button>
                 </div>
-                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full lg:w-full flex flex-col justify-end">
+                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full md:w-1/2 lg:w-full flex flex-col justify-end">
                   <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
                     Шиндин Никита
                   </h5>
