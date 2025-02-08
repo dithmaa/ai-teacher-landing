@@ -14,6 +14,10 @@ const Quiz = () => {
   const [fitnessChallenge, setFitnessChallenge] = useState<string>("");
   const [fitnessExperience, setFitnessExperience] = useState<string>("");
 
+  const handleButtonClick = (e: React.FormEvent) => {
+    e.preventDefault(); // Предотвращаем обновление формы
+  };
+
   const firstStepFunc = () => {
     setStep(2);
     setIsHeaderVisible(false);
@@ -53,8 +57,8 @@ const Quiz = () => {
     });
   };
 
-  const handleGenderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setGender(e.target.value);
+  const handleGenderChange = (value: string) => {
+    setGender(value);
   };
 
   const handleFitnessChallengeChange = (
@@ -108,34 +112,58 @@ const Quiz = () => {
             </div>
           )}
 
-          {/* Шаг 2 - Цель */}
           {step === 2 && (
             <div className="text-center space-y-6">
               <h3 className="text-lg lg:text-2xl font-semibold text-[#838383]">
                 Какая у тебя цель? (Выберите несколько)
               </h3>
-              <div className="space-y-4">
-                {[
-                  "Сбросить вес",
-                  "Набрать мышечную массу",
-                  "Укрепить здоровье",
-                  "Держать в тонусе",
-                  "Восстановление после травмы",
-                  "Развитие гибкости",
-                ].map((goalOption) => (
-                  <div key={goalOption} className="flex items-center">
-                    <input
-                      type="checkbox"
-                      value={goalOption}
-                      onChange={() => handleGoalChange(goalOption)}
-                      checked={goal.includes(goalOption)}
-                    />
-                    <span className="ml-2">{goalOption}</span>
-                  </div>
-                ))}
+              <div className="space-y-4 flex flex-wrap">
+                <div className="flex flex-wrap w-ful gap-y-5">
+                  {[
+                    "Сбросить вес",
+                    "Набрать мышечную массу",
+                    "Укрепить здоровье",
+                    "Держать в тонусе",
+                    "Восстановление после травмы",
+                    "Развитие гибкости",
+                  ].map((goalOption) => (
+                    <div
+                      key={goalOption}
+                      className="flex items-center cursor-pointer w-1/2 px-1"
+                      onClick={() => {
+                        handleGoalChange(goalOption);
+                        setIsError(false);
+                      }}
+                    >
+                      <div
+                        className={`w-full py-5 px-6 border-[1px] rounded-[10px] flex items-center justify-center transition-all duration-200 ease-in-out ${
+                          goal.includes(goalOption)
+                            ? "bg-blue-500 border-[#b9b9b9] text-white"
+                            : "bg-white border-[#b9b9b9] text-[#111]"
+                        } hover:opacity-80 active:scale-95`}
+                      >
+                        <span className="text-lg">{goalOption}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
+              {isError && (
+                <p className="text-red-500 text-sm">
+                  Пожалуйста, выберите хотя бы одну цель.
+                </p>
+              )}
               <button
-                onClick={() => handleNextStep(3)}
+                onClick={(e) => {
+                  if (goal.length > 0) {
+                    e.preventDefault();
+                    setIsError(false); // Сброс ошибки перед переходом
+                    handleNextStep(3);
+                  } else {
+                    e.preventDefault();
+                    setIsError(true); // Показываем ошибку, если не выбрана цель
+                  }
+                }}
                 className="text-white py-3 px-6 rounded-full shadow-md transform transition-all duration-300 cursor-pointer active:opacity-50"
                 style={{
                   background: "linear-gradient(to right, #4f46e5, #9333ea)",
@@ -146,28 +174,59 @@ const Quiz = () => {
             </div>
           )}
 
-          {/* Шаг 3 - Пол */}
           {step === 3 && (
             <div className="text-center space-y-6">
               <h3 className="text-lg lg:text-2xl font-semibold text-[#838383]">
                 Ваш пол?
               </h3>
-              <div className="space-y-4">
-                {["М", "Ж", "Предпочитаю не отвечать"].map((genderOption) => (
-                  <div key={genderOption} className="flex items-center">
-                    <input
-                      type="radio"
-                      name="gender"
-                      value={genderOption}
-                      onChange={handleGenderChange}
-                      checked={gender === genderOption}
-                    />
-                    <span className="ml-2">{genderOption}</span>
-                  </div>
-                ))}
+              <div className="space-y-4 flex flex-wrap items-center">
+                {["М", "Ж", "Предпочитаю не отвечать"].map(
+                  (genderOption, index) => (
+                    <div
+                      key={genderOption}
+                      className={`flex items-center cursor-pointer ${
+                        index < 2 ? "w-1/2" : "w-full"
+                      } px-1`}
+                    >
+                      <input
+                        type="radio"
+                        id={genderOption}
+                        name="gender"
+                        value={genderOption}
+                        checked={gender === genderOption}
+                        onChange={() => handleGenderChange(genderOption)}
+                        className="hidden"
+                      />
+                      <div
+                        className={`w-full py-5 px-6 border-[1px] rounded-[10px] flex items-center justify-center transition-all duration-200 ease-in-out ${
+                          gender === genderOption
+                            ? "bg-blue-500 border-[#b9b9b9] text-white"
+                            : "bg-white border-[#b9b9b9] text-[#111]"
+                        } hover:opacity-80 active:scale-95`}
+                        onClick={() => handleGenderChange(genderOption)}
+                      >
+                        <span className="text-lg">{genderOption}</span>
+                      </div>
+                    </div>
+                  )
+                )}
               </div>
+              {isError && gender === "" && (
+                <p className="text-red-500 text-sm">
+                  Пожалуйста, выберите ваш пол.
+                </p>
+              )}
               <button
-                onClick={() => handleNextStep(4)}
+                onClick={(e) => {
+                  if (gender !== "") {
+                    e.preventDefault();
+                    setIsError(false); // Сброс ошибки перед переходом
+                    handleNextStep(4);
+                  } else {
+                    e.preventDefault();
+                    setIsError(true); // Показываем ошибку, если пол не выбран
+                  }
+                }}
                 className="text-white py-3 px-6 rounded-full shadow-md transform transition-all duration-300 cursor-pointer active:opacity-50"
                 style={{
                   background: "linear-gradient(to right, #4f46e5, #9333ea)",
@@ -178,7 +237,6 @@ const Quiz = () => {
             </div>
           )}
 
-          {/* Шаг 4 - Вызов в фитнесе */}
           {step === 4 && (
             <div className="text-center space-y-6">
               <h3 className="text-lg lg:text-2xl font-semibold text-[#838383]">
@@ -200,8 +258,22 @@ const Quiz = () => {
                 </option>
                 <option value="Другое">Другое</option>
               </select>
+              {isError && fitnessChallenge === "" && (
+                <p className="text-red-500 text-sm">
+                  Пожалуйста, выберите вызов.
+                </p>
+              )}
               <button
-                onClick={() => handleNextStep(5)}
+                onClick={(e) => {
+                  if (fitnessChallenge !== "") {
+                    e.preventDefault();
+                    setIsError(false); // Сброс ошибки перед переходом
+                    handleNextStep(5);
+                  } else {
+                    e.preventDefault();
+                    setIsError(true); // Показываем ошибку, если вызов не выбран
+                  }
+                }}
                 className="text-white py-3 px-6 rounded-full shadow-md transform transition-all duration-300 cursor-pointer active:opacity-50"
                 style={{
                   background: "linear-gradient(to right, #4f46e5, #9333ea)",
@@ -212,7 +284,6 @@ const Quiz = () => {
             </div>
           )}
 
-          {/* Шаг 5 - Опыт в фитнесе */}
           {step === 5 && (
             <div className="text-center space-y-6">
               <h3 className="text-lg lg:text-2xl font-semibold text-[#838383]">
@@ -230,8 +301,22 @@ const Quiz = () => {
                 <option value="Немного опыта">Немного опыта</option>
                 <option value="Много опыта">Много опыта</option>
               </select>
+              {isError && fitnessExperience === "" && (
+                <p className="text-red-500 text-sm">
+                  Пожалуйста, выберите ваш опыт.
+                </p>
+              )}
               <button
-                onClick={() => handleNextStep(6)}
+                onClick={(e) => {
+                  if (fitnessExperience !== "") {
+                    e.preventDefault();
+                    setIsError(false); // Сброс ошибки перед переходом
+                    handleNextStep(6);
+                  } else {
+                    e.preventDefault();
+                    setIsError(true); // Показываем ошибку, если опыт не выбран
+                  }
+                }}
                 className="text-white py-3 px-6 rounded-full shadow-md transform transition-all duration-300 cursor-pointer active:opacity-50"
                 style={{
                   background: "linear-gradient(to right, #4f46e5, #9333ea)",
