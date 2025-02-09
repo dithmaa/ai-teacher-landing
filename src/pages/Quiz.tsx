@@ -241,7 +241,7 @@ const Quiz = () => {
               <select
                 value={fitnessChallenge}
                 onChange={handleFitnessChallengeChange}
-                className="w-full p-4 text-lg border-2 rounded-lg focus:outline-none"
+                className="w-full p-4 text-lg border-2 border-[#838383] rounded-lg focus:outline-none"
               >
                 <option value="">Выберите вызов</option>
                 <option value="поддерживать мотивацию">
@@ -288,7 +288,7 @@ const Quiz = () => {
               <select
                 value={fitnessExperience}
                 onChange={handleFitnessExperienceChange}
-                className="w-full p-4 text-lg border-2 rounded-lg focus:outline-none"
+                className="w-full p-4 text-lg border-2 border-[#838383] rounded-lg focus:outline-none"
               >
                 <option value="">Выберите опыт</option>
                 <option value="Нет или совсем мало опыта">
@@ -346,7 +346,7 @@ const Quiz = () => {
                 value={contact}
                 onChange={handleContactChange}
                 maxLength={14}
-                className={`w-full p-4 text-lg border-2 rounded-lg focus:outline-none transition duration-300  ${
+                className={`w-full p-4 text-lg border-2 border-[#838383] rounded-lg focus:outline-none transition duration-300  ${
                   isError
                     ? "border-red-500"
                     : "border-[#4f46e5] focus:ring-2 focus:ring-[#9333ea]"
