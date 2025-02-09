@@ -70,9 +70,9 @@ const Quiz = () => {
   };
 
   return (
-    <div className="App max-w-[1280px] mx-auto px-6 py-8 flex flex-col justify-center items-center min-h-screen">
+    <div className="App max-w-[1280px] mx-auto px-6 lg:py-8 flex flex-col justify-start lg:justify-center items-center min-h-[650px] lg:min-h-screen pt-[60px] lg:pt-[0px]">
       {isHeaderVisible && (
-        <header className="mt-[-50px] mb-[50px] lg:mt-[-100px] lg:mb-[100px]">
+        <header className="mb-[30px] lg:mt-[0px] lg:mb-[40px]">
           <img src={Logo} width={200} alt="FitMentor Logo" />
         </header>
       )}
