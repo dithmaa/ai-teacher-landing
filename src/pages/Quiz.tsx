@@ -70,7 +70,7 @@ const Quiz = () => {
   };
 
   return (
-    <div className="App max-w-[1280px] mx-auto px-6 lg:py-8 flex flex-col justify-center items-center min-h-[90vh] lg:min-h-screen">
+    <div className="App max-w-[1280px] mx-auto my-auto px-6 lg:py-8 flex flex-col justify-center items-center min-h-[95vh] lg:min-h-screen">
       {isHeaderVisible && (
         <header className="mt-[30px] mb-[50px] lg:mt-[-100px] lg:mb-[100px]">
           <img src={Logo} width={200} alt="FitMentor Logo" />
@@ -90,7 +90,7 @@ const Quiz = () => {
 
           {/* Шаг 1 - Прохождение квиза */}
           {step === 1 && (
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 pt-8">
               <h2 className="text-lg lg:text-2xl lg:font-semibold text-[#838383]">
                 Ответьте на 5 вопросов и получите программу
               </h2>
@@ -109,7 +109,7 @@ const Quiz = () => {
           )}
 
           {step === 2 && (
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 pt-8">
               <h3 className="text-lg lg:text-2xl font-semibold text-[#838383]">
                 Какая у тебя цель? (Выберите несколько)
               </h3>
@@ -132,13 +132,13 @@ const Quiz = () => {
                       }}
                     >
                       <div
-                        className={`w-full py-5 px-6 border-[1px] rounded-[10px] flex items-center justify-center transition-all duration-200 ease-in-out ${
+                        className={`w-full py-5 px-6 border-[1px] rounded-[10px] flex items-center justify-center transition-all duration-200 ease-in-out h-full ${
                           goal.includes(goalOption)
                             ? "bg-[#2b7fff] border-[#b9b9b9] text-[#fff]"
                             : "bg-[#fff] border-[#b9b9b9] text-[#111]"
                         } hover:opacity-80 active:scale-95`}
                       >
-                        <span className="text-lg">{goalOption}</span>
+                        <span className="text-sm lg:text-lg">{goalOption}</span>
                       </div>
                     </div>
                   ))}
@@ -171,7 +171,7 @@ const Quiz = () => {
           )}
 
           {step === 3 && (
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 pt-8">
               <h3 className="text-lg lg:text-2xl font-semibold text-[#838383]">
                 Ваш пол?
               </h3>
@@ -234,7 +234,7 @@ const Quiz = () => {
           )}
 
           {step === 4 && (
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 pt-8">
               <h3 className="text-lg lg:text-2xl font-semibold text-[#838383]">
                 Выберите самый главный вызов в фитнесе для себя!
               </h3>
@@ -283,7 +283,7 @@ const Quiz = () => {
           )}
 
           {step === 5 && (
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 pt-8">
               <h3 className="text-lg lg:text-2xl font-semibold text-[#838383]">
                 Расскажите, сколько у вас опыта в фитнесе?
               </h3>
@@ -328,7 +328,7 @@ const Quiz = () => {
 
           {/* Шаг 6 - Ваша программа с записанными видео уже готова! */}
           {step === 6 && (
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 pt-8">
               <h3 className="text-xl lg:text-3xl font-semibold text-[#838383]">
                 Ваша программа с записанными видео уже готова!
               </h3>
@@ -373,7 +373,7 @@ const Quiz = () => {
           )}
           {/* Шаг 7 - Выбор тарифа */}
           {step === 7 && (
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 pt-8">
               <h2 className="text-2xl font-semibold text-[#838383]">
                 Выберите тариф
               </h2>
@@ -411,7 +411,7 @@ const Quiz = () => {
 
           {/* Шаг 8 - Экран оплаты */}
           {step === 8 && (
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-6 pt-8">
               <h2 className="text-2xl font-semibold text-[#838383]">
                 Переходите к оплате через Юмани
               </h2>
