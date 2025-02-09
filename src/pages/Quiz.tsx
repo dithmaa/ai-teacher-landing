@@ -413,10 +413,10 @@ const Quiz = () => {
           {step === 8 && (
             <div className="text-center space-y-6 pt-8">
               <h2 className="text-2xl font-semibold text-[#838383]">
-                Переходите к оплате через Юмани
+                Переходите к выбору тренера
               </h2>
               <a
-                href="https://yoomoney.ru/"
+                href="/"
                 type="submit"
                 style={{
                   background: "linear-gradient(to right, #34d399, #10b981)",

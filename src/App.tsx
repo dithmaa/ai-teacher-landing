@@ -233,7 +233,7 @@ const App = () => {
                   />
                   <button
                     onClick={apply}
-                    className="cursor-pointer transform absolute left-[50%] translate-x-[-50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-2 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
+                    className="cursor-pointer transform absolute left-[50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-2 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
                   >
                     Записаться
                   </button>
@@ -249,7 +249,7 @@ const App = () => {
                   />
                   <button
                     onClick={apply}
-                    className="cursor-pointer transform absolute left-[50%] translate-x-[-50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-2 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
+                    className="cursor-pointer transform absolute left-[50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-2 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
                   >
                     Записаться
                   </button>

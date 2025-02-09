@@ -123,6 +123,11 @@ form input {
   outline: none;
 }
 
+.trainers-list button {
+  transform: translateX(-50%) !important;
+  left: 50% !important;
+}
+
 @media screen and (max-width: 400px) {
   .white-plaque div {
     flex-direction: column !important;
