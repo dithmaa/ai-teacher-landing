@@ -59,7 +59,7 @@ const settings = {
 };
 
 const apply = () => {
-  window.location.href = "/quiz";
+  window.location.href = "https://t.me/FitGuid_bot";
 };
 
 const App = () => {
