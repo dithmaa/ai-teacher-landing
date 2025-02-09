@@ -108,6 +108,19 @@ p {
 
 select {
   border: 2px solid #838383 !important;
+  outline: none;
+}
+
+select.active {
+  background-color: #2b7fff;
+  color: #fff;
+  border: 2px solid #ffffff !important;
+  outline: none;
+}
+
+form input {
+  border: 2px solid #838383 !important;
+  outline: none;
 }
 
 @media screen and (max-width: 400px) {
