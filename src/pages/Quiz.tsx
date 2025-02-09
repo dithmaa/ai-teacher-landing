@@ -134,8 +134,8 @@ const Quiz = () => {
                       <div
                         className={`w-full py-5 px-6 border-[1px] rounded-[10px] flex items-center justify-center transition-all duration-200 ease-in-out ${
                           goal.includes(goalOption)
-                            ? "bg-blue-500 border-[#b9b9b9] text-white"
-                            : "bg-white border-[#b9b9b9] text-[#111]"
+                            ? "bg-[#2b7fff] border-[#b9b9b9] text-[#fff]"
+                            : "bg-[#fff] border-[#b9b9b9] text-[#111]"
                         } hover:opacity-80 active:scale-95`}
                       >
                         <span className="text-lg">{goalOption}</span>
@@ -196,8 +196,8 @@ const Quiz = () => {
                       <div
                         className={`w-full py-5 px-6 border-[1px] rounded-[10px] flex items-center justify-center transition-all duration-200 ease-in-out ${
                           gender === genderOption
-                            ? "bg-blue-500 border-[#b9b9b9] text-white"
-                            : "bg-white border-[#b9b9b9] text-[#111]"
+                            ? "bg-[#2b7fff] border-[#b9b9b9] text-[#fff]"
+                            : "bg-[#fff] border-[#b9b9b9] text-[#111]"
                         } hover:opacity-80 active:scale-95`}
                         onClick={() => handleGenderChange(genderOption)}
                       >
@@ -329,7 +329,7 @@ const Quiz = () => {
               <h3 className="text-xl lg:text-3xl font-semibold text-[#838383]">
                 Ваша программа с записанными видео уже готова!
               </h3>
-              <div className="bg-gray-200 h-40 w-full rounded-lg overflow-hidden shadow-lg">
+              <div className="bg-[#e5e7eb] h-40 w-full rounded-lg overflow-hidden shadow-lg">
                 <img
                   src={blurImage}
                   alt="Мини-апп"
