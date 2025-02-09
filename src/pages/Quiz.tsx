@@ -423,7 +423,7 @@ const Quiz = () => {
                 }}
                 className="text-white py-3 px-6 rounded-full shadow-lg w-full transform transition-all duration-300 cursor-pointer"
               >
-                Перейти к оплате
+                Выбрать тренера
               </a>
             </div>
           )}
