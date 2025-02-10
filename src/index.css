@@ -4,6 +4,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  outline: none !important;
 }
 
 body,
@@ -128,23 +129,55 @@ form input {
   left: 50% !important;
 }
 
-.slick-list {
+.trainers .slick-list {
   gap: 20px;
+  outline: none !important;
 }
 
-.slick-track {
+.trainers .slick-track {
   display: flex;
   align-items: center;
-  gap: 20px;
+  outline: none !important;
+  /* gap: 20px; */
 }
 
-.slick-slide {
+.trainers .slick-slide {
   text-align: center;
+  width: 370px;
+  outline: none;
   /* margin: 0 10px !important; */
+  outline: none !important;
 }
 
-.slick-track {
+.trainers .slick-slide:active,
+.trainers .slick-slide:focus {
+  outline: none !important;
+}
+
+.trainers .slick-track {
   padding: 40px 0;
+}
+
+@media screen and (max-width: 1300px) {
+  .trainers .slick-slide {
+    width: 300px !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .trainers .slick-slide {
+    width: 280px !important;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .trainers .slick-slide {
+    width: 260px !important;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .trainers .slick-slide {
+    width: 500px !important;
+  }
 }
 
 @media screen and (max-width: 400px) {
