@@ -65,6 +65,34 @@ const settings = {
   nextArrow: <CustomNextArrow />, // Кастомная стрелка "Вперёд"
 };
 
+const settings2 = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  centerMode: true,
+  centerPadding: "10px",
+  prevArrow: <CustomPrevArrow />,
+  nextArrow: <CustomNextArrow />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        centerPadding: "10px", // Уменьшите значение для большего расстояния на этом разрешении
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        centerPadding: "10px", // Уменьшите значение для большего расстояния на этом разрешении
+      },
+    },
+  ],
+};
+
 const apply = () => {
   window.location.href = "https://t.me/FitGuid_bot";
 };
@@ -228,57 +256,60 @@ const App = () => {
           <section className="trainers">
             <h2 className="text-[30px] lg:text-[50px] font-semibold text-[#353532] mt-6 text-center leading-9 lg:leading-16 mb-5">
               Подобрали тренеров для вас!
-              <div className="trainers-list flex lg:flex-row flex-col items-center justify-between xl:gap-10 gap-20 mt-14">
-                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full md:w-1/2 lg:w-full flex flex-col justify-end">
-                  <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
-                    Тренер Богдан
-                  </h5>
-                  <img
-                    src={trainer1}
-                    alt=""
-                    className="h-[284px] mx-auto object-cover"
-                  />
-                  <button
-                    onClick={apply}
-                    className="cursor-pointer transform absolute left-[50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-2 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
-                  >
-                    Записаться
-                  </button>
-                </div>
-                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full md:w-1/2 lg:w-full flex flex-col justify-end">
-                  <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
-                    Шохина Мария
-                  </h5>
-                  <img
-                    src={trainer2}
-                    alt=""
-                    className="h-[284px] mx-auto object-cover"
-                  />
-                  <button
-                    onClick={apply}
-                    className="cursor-pointer transform absolute left-[50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-2 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
-                  >
-                    Записаться
-                  </button>
-                </div>
-                <div className="trainer-item relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full md:w-1/2 lg:w-full flex flex-col justify-end">
-                  <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
-                    Шиндин Никита
-                  </h5>
-                  <img
-                    src={trainer3}
-                    alt=""
-                    className="h-[284px] mx-auto object-cover"
-                  />
-                  <button
-                    onClick={apply}
-                    className="cursor-pointer transform absolute left-[50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-2 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
-                  >
-                    Записаться
-                  </button>
-                </div>
-              </div>
             </h2>
+            <Slider
+              {...settings2}
+              className="trainers-list flex items-center justify-between xl:gap-10 gap-20 mt-14"
+            >
+              <div className="trainer-item max-w-[400px] lg:max-w-[300px] relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full flex flex-col justify-end">
+                <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
+                  Тренер Богдан
+                </h5>
+                <img
+                  src={trainer1}
+                  alt=""
+                  className="h-[284px] mx-auto object-cover"
+                />
+                <button
+                  onClick={apply}
+                  className="cursor-pointer transform absolute left-[50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-4 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
+                >
+                  Записаться
+                </button>
+              </div>
+              <div className="trainer-item max-w-[400px] lg:max-w-[300px] relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full flex flex-col justify-end">
+                <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
+                  Шохина Мария
+                </h5>
+                <img
+                  src={trainer2}
+                  alt=""
+                  className="h-[284px] mx-auto object-cover"
+                />
+                <button
+                  onClick={apply}
+                  className="cursor-pointer transform absolute left-[50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-4 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
+                >
+                  Записаться
+                </button>
+              </div>
+              <div className="trainer-item max-w-[400px] lg:max-w-[300px] relative pt-3 bg-white rounded-[40px] border-1 border-[#bababa] w-full flex flex-col justify-end">
+                <h5 className="lg:text-[24px] text-[20px] my-3 font-normal">
+                  Шиндин Никита
+                </h5>
+                <img
+                  src={trainer3}
+                  alt=""
+                  className="h-[284px] mx-auto object-cover"
+                />
+                <button
+                  onClick={apply}
+                  className="cursor-pointer transform absolute left-[50%] bottom-[-20px] mt-3 lg:mt-5 px-10 lg:px-10 py-4 lg:py-4 bg-[#6F3DDE] text-white rounded-full shadow-lg hover:opacity-90 font-medium text-[22px] lg:text-[35px] bg-clip-border gradient-button"
+                >
+                  Записаться
+                </button>
+              </div>
+            </Slider>
           </section>
 
           <section className="app-screens">

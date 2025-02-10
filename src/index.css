@@ -128,9 +128,23 @@ form input {
   left: 50% !important;
 }
 
+.slick-list {
+  gap: 20px;
+}
+
 .slick-track {
   display: flex;
   align-items: center;
+  gap: 20px;
+}
+
+.slick-slide {
+  text-align: center;
+  /* margin: 0 10px !important; */
+}
+
+.slick-track {
+  padding: 40px 0;
 }
 
 @media screen and (max-width: 400px) {
