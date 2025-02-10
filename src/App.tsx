@@ -1,6 +1,13 @@
 import Slider from "react-slick";
 import Logo from "./assets/logo.png";
 import Testimonial1 from "./assets/slider/1.jpg";
+import Testimonial2 from "./assets/slider/2.jpg";
+import Testimonial3 from "./assets/slider/3.jpg";
+import Testimonial4 from "./assets/slider/4.jpg";
+import Testimonial5 from "./assets/slider/5.jpg";
+import Testimonial6 from "./assets/slider/6.jpg";
+import Testimonial7 from "./assets/slider/7.jpg";
+import Testimonial8 from "./assets/slider/8.jpg";
 import threeHundred from "./assets/slider/three-hundred.png";
 import features1 from "./assets/features/1.png";
 import features2 from "./assets/features/2.png";
@@ -288,18 +295,60 @@ const App = () => {
             </h2>
             <div className="mx-auto">
               <Slider {...settings} className="w-full mx-auto">
-                <div>
+                <div className="flex items-center my-auto">
                   <img
                     src={Testimonial1}
                     alt="Review 1"
-                    className="w-[600px] rounded-lg mx-auto"
+                    className="w-[450px] rounded-lg mx-auto"
                   />
                 </div>
-                <div>
+                <div className="flex items-center my-auto">
                   <img
-                    src={Testimonial1}
+                    src={Testimonial2}
                     alt="Review 1"
-                    className="w-[600px] rounded-lg mx-auto"
+                    className="w-[450px] rounded-lg mx-auto"
+                  />
+                </div>
+                <div className="flex items-center my-auto">
+                  <img
+                    src={Testimonial3}
+                    alt="Review 1"
+                    className="w-[450px] rounded-lg mx-auto"
+                  />
+                </div>
+                <div className="flex items-center my-auto">
+                  <img
+                    src={Testimonial4}
+                    alt="Review 1"
+                    className="w-[450px] rounded-lg mx-auto"
+                  />
+                </div>
+                <div className="flex items-center my-auto">
+                  <img
+                    src={Testimonial5}
+                    alt="Review 1"
+                    className="w-[450px] rounded-lg mx-auto"
+                  />
+                </div>
+                <div className="flex items-center my-auto">
+                  <img
+                    src={Testimonial6}
+                    alt="Review 1"
+                    className="w-[450px] rounded-lg mx-auto"
+                  />
+                </div>
+                <div className="flex items-center my-auto">
+                  <img
+                    src={Testimonial7}
+                    alt="Review 1"
+                    className="w-[450px] rounded-lg mx-auto"
+                  />
+                </div>
+                <div className="flex items-center my-auto">
+                  <img
+                    src={Testimonial8}
+                    alt="Review 1"
+                    className="w-[450px] rounded-lg mx-auto"
                   />
                 </div>
               </Slider>

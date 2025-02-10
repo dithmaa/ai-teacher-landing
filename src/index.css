@@ -128,6 +128,11 @@ form input {
   left: 50% !important;
 }
 
+.slick-track {
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (max-width: 400px) {
   .white-plaque div {
     flex-direction: column !important;
